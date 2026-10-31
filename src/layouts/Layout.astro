@@ -1,23 +1,98 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+	filename?: string;
+}
+
+const {
+	title = 'Hannah the Editor',
+	description = 'Thoughtful developmental editing, line editing, and proofreading.',
+	filename = 'hannah-the-editor.txt',
+} = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta name="description" content={description} />
+		<title>{title}</title>
 	</head>
-	<body>
-		<slot />
+	<body class="min-h-screen bg-pale-pink text-neutral-brown font-serif py-6 px-4 sm:py-10 sm:px-6">
+		<div class="mx-auto max-w-3xl rounded-md border border-neutral-brown/25 bg-[#FFFDFA] shadow-[0_8px_28px_rgba(74,59,50,0.08)] overflow-hidden">
+			<!-- Notepad Title Bar -->
+			<div class="flex items-center justify-between bg-sage-green px-4 py-2 border-b border-neutral-brown/20 font-mono text-xs text-[#FFFDFA]">
+				<div class="flex items-center gap-2 tracking-wide">
+					<span aria-hidden="true" class="inline-block h-2.5 w-2.5 rounded-xs bg-pale-pink/90 border border-neutral-brown/20"></span>
+					<span>{filename} — Notepad</span>
+				</div>
+				<div class="flex items-center gap-2.5 select-none opacity-90" aria-hidden="true">
+					<span>&minus;</span>
+					<span>&#9633;</span>
+					<span>&times;</span>
+				</div>
+			</div>
+
+			<!-- Notepad Menu Bar -->
+			<nav
+				aria-label="Primary"
+				class="flex flex-wrap items-center gap-5 border-b border-sage-green/40 bg-pale-pink/75 px-4 py-1.5 font-mono text-xs text-neutral-brown"
+			>
+				<a href="/" class="hover:underline decoration-sage-green decoration-2 underline-offset-4">
+					<span class="underline">H</span>ome
+				</a>
+				<a href="#services" class="hover:underline decoration-sage-green decoration-2 underline-offset-4">
+					<span class="underline">S</span>ervices
+				</a>
+				<a href="#about" class="hover:underline decoration-sage-green decoration-2 underline-offset-4">
+					<span class="underline">A</span>bout
+				</a>
+				<a href="#contact" class="hover:underline decoration-sage-green decoration-2 underline-offset-4">
+					<span class="underline">C</span>ontact
+				</a>
+			</nav>
+
+			<!-- Main Header & Brand Logo -->
+			<header class="border-b border-sage-green/40 bg-[#FFFDFA] px-6 py-8 text-center">
+				<a href="/" class="block w-full" aria-label="Hannah the Editor — Home">
+					<img
+						src="/logo.svg"
+						alt="Hannah the Editor"
+						class="header-logo mx-auto block h-auto w-[70%] max-w-[400px]"
+					/>
+				</a>
+			</header>
+
+			<!-- Ruled Notepad Body -->
+			<main class="notepad-ruled relative min-h-[24rem] px-6 py-8 sm:px-12 sm:py-10">
+				<div
+					aria-hidden="true"
+					class="pointer-events-none absolute inset-y-0 left-8 hidden border-l border-sage-green/35 sm:block"
+				></div>
+				<div class="relative z-10 leading-8 sm:pl-4">
+					<slot />
+				</div>
+			</main>
+
+			<!-- Notepad Status Bar Footer -->
+			<footer class="flex flex-wrap items-center justify-between gap-2 border-t border-sage-green/40 bg-pale-pink/80 px-4 py-2 font-mono text-xs text-neutral-brown/80">
+				<span>Ln 1, Col 1 &nbsp;|&nbsp; UTF-8</span>
+				<span>&copy; {new Date().getFullYear()} Hannah the Editor</span>
+			</footer>
+		</div>
 	</body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
+	.header-logo {
+		width: 70%;
+		max-width: 400px;
 	}
 </style>

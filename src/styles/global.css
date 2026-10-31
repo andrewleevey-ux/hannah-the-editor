@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@config "../../tailwind.config.mjs";
+
+@layer base {
+	html,
+	body {
+		margin: 0;
+		min-height: 100%;
+		background-color: #FBF4F5;
+		color: #4A3B32;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+.notepad-ruled {
+	background-color: #FFFDFA;
+	background-image: linear-gradient(
+		to bottom,
+		transparent calc(2rem - 1px),
+		rgba(143, 164, 148, 0.22) calc(2rem - 1px),
+		rgba(143, 164, 148, 0.22) 2rem
+	);
+	background-size: 100% 2rem;
+}

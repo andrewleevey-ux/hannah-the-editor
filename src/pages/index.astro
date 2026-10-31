@@ -1,11 +1,46 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Hannah the Editor">
+	<section class="space-y-8">
+		<div>
+			<p class="font-mono text-xs uppercase tracking-widest text-sage-green">
+				// welcome.txt
+			</p>
+			<h1 class="mt-1 text-2xl sm:text-3xl font-normal text-neutral-brown">
+				Clear, warm, attentive editing for stories worth telling.
+			</h1>
+			<p class="mt-4 text-base text-neutral-brown/90">
+				Every manuscript deserves a thoughtful second pair of eyes. Whether you are shaping an early draft
+				or polishing final pages, let&rsquo;s bring out your clearest voice while keeping every word unmistakably yours.
+			</p>
+		</div>
+
+		<div id="services" class="space-y-4 pt-2">
+			<h2 class="font-mono text-sm uppercase tracking-wider text-neutral-brown border-b border-sage-green/50 inline-block">
+				Editorial Services
+			</h2>
+			<ul class="list-disc pl-5 space-y-2 text-neutral-brown/90">
+				<li>
+					<strong class="font-semibold text-neutral-brown">Developmental Editing:</strong> Big-picture structure, pacing, character arc, and narrative cohesion.
+				</li>
+				<li>
+					<strong class="font-semibold text-neutral-brown">Line &amp; Copy Editing:</strong> Sentence-level rhythm, clarity, consistency, and style sheet care.
+				</li>
+				<li>
+					<strong class="font-semibold text-neutral-brown">Proofreading:</strong> A meticulous final pass before publication or submission.
+				</li>
+			</ul>
+		</div>
+
+		<div id="contact" class="pt-2">
+			<a
+				href="mailto:hello@hannahtheeditor.com"
+				class="inline-block rounded-sm border border-neutral-brown/30 bg-sage-green px-5 py-1.5 font-mono text-xs uppercase tracking-wider text-[#FFFDFA] transition hover:bg-neutral-brown"
+			>
+				Request a Sample Edit &rarr;
+			</a>
+		</div>
+	</section>
 </Layout>
