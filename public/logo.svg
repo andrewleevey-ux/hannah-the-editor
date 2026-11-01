@@ -1,31 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 96" fill="none" role="img" aria-labelledby="logoTitle">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="24 8 352 80" fill="none" role="img" aria-labelledby="logoTitle">
   <title id="logoTitle">Hannah The Editor</title>
-  <!-- Fine editorial masthead rules in Pale Pink for high contrast over video -->
-  <line x1="24" y1="12" x2="376" y2="12" stroke="#FBF4F5" stroke-opacity="0.42" stroke-width="1" />
+  <!-- Fine editorial masthead top rule -->
+  <line x1="24" y1="12" x2="376" y2="12" stroke="#4A3B32" stroke-opacity="0.4" stroke-width="1.35" />
 
   <!-- Editorial Masthead Wordmark -->
   <text
     x="200"
     y="56"
     text-anchor="middle"
-    fill="#FBF4F5"
+    fill="#4A3B32"
     font-family="'Cormorant Garamond', Georgia, 'Times New Roman', serif"
     font-size="46"
     font-weight="500"
     letter-spacing="3.5"
   >HANNAH</text>
 
-  <!-- Subtitle & Hairlines -->
-  <line x1="52" y1="78" x2="124" y2="78" stroke="#FBF4F5" stroke-opacity="0.48" stroke-width="1" />
+  <!-- Subtitle & Flanking Hairlines -->
+  <line x1="52" y1="79" x2="120" y2="79" stroke="#4A3B32" stroke-opacity="0.45" stroke-width="1.35" />
   <text
     x="200"
-    y="82"
+    y="83"
     text-anchor="middle"
-    fill="#FBF4F5"
+    fill="#4A3B32"
     font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif"
-    font-size="10.5"
+    font-size="12"
     font-weight="600"
     letter-spacing="4.2"
   >THE EDITOR</text>
-  <line x1="276" y1="78" x2="348" y2="78" stroke="#FBF4F5" stroke-opacity="0.48" stroke-width="1" />
+  <line x1="280" y1="79" x2="348" y2="79" stroke="#4A3B32" stroke-opacity="0.45" stroke-width="1.35" />
 </svg>

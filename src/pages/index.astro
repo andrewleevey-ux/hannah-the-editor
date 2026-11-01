@@ -3,15 +3,15 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Hannah The Editor — Book a Free Opening Chapter Review">
-	<!-- Full-Width Responsive Video Hero with Overlaid Brand Logo -->
+	<!-- Full-Width Responsive Video Hero -->
 	<section
 		aria-label="Hero"
-		class="relative isolate flex min-h-[85vh] w-full flex-col justify-between overflow-hidden border-b border-neutral-brown/20 bg-neutral-brown text-pale-pink"
+		class="relative isolate flex min-h-[85vh] w-full flex-col justify-end overflow-hidden border-b border-neutral-brown/20 bg-neutral-brown text-pale-pink"
 	>
 		<!-- Background HTML5 Video -->
 		<video
+			id="hero-video"
 			autoplay
-			loop
 			muted
 			playsinline
 			poster="/hero-poster.svg"
@@ -21,55 +21,25 @@ import Layout from '../layouts/Layout.astro';
 			<source src="/videos/hannahtheeditor_videohero.mp4" type="video/mp4" />
 		</video>
 
-		<!-- High-Contrast Editorial Scrim Overlay -->
+		<!-- Subtle Bottom Vignette for Floating CTA & Credibility Bar Contrast -->
 		<div
 			aria-hidden="true"
-			class="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#241B16]/80 via-[#382C25]/72 to-[#211814]/88"
+			class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#211814]/80 via-[#211814]/20 to-transparent"
 		></div>
 
-		<!-- Centered Overlaid Logo, Value Proposition & Primary CTA -->
-		<div class="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-6 py-16 text-center sm:px-10 sm:py-24">
-			<!-- Overlaid 'Hannah The Editor' Logo (width: 70%, max-width: 400px) -->
-			<a href="/" class="block w-full" aria-label="Hannah The Editor — Home">
-				<img
-					src="/logo.svg"
-					alt="Hannah The Editor"
-					width="400"
-					height="96"
-					class="hero-logo mx-auto block h-auto w-[70%] max-w-[400px] drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]"
-				/>
-			</a>
+		<!-- Floating CTA Box Positioned Over Video -->
+		<div class="relative z-10 mx-auto w-full max-w-5xl px-6 pb-10 pt-24 sm:px-10 sm:pb-14">
+			<div class="flex flex-col items-center justify-between gap-5 rounded-lg border border-solid border-white bg-[#211814]/65 px-6 py-6 text-center backdrop-blur-sm md:flex-row md:gap-8 md:px-8 md:py-6 md:text-left">
+				<h1 class="font-serif text-2xl font-normal leading-snug text-pale-pink sm:text-3xl">
+					Shape your draft into the manuscript agents and readers cannot put down.
+				</h1>
 
-			<div aria-hidden="true" class="mt-7 h-px w-16 bg-pale-pink/40"></div>
-
-			<p class="mt-6 text-[11px] font-medium uppercase tracking-[0.24em] text-pale-pink/85">
-				Now Booking Spring &amp; Summer Editorial Slates
-			</p>
-
-			<h1 class="mt-4 max-w-3xl font-serif text-4xl font-normal leading-[1.08] tracking-[-0.01em] text-pale-pink sm:text-5xl lg:text-6xl">
-				Shape your draft into the manuscript agents and readers <em class="italic">cannot</em> put down.
-			</h1>
-
-			<p class="mt-6 max-w-2xl text-base leading-relaxed text-pale-pink/90 sm:text-lg">
-				Incisive developmental guidance and line-by-line craft for fiction and narrative nonfiction
-				authors&mdash;elevating structure, tension, and prose rhythm while keeping every sentence
-				unmistakably yours.
-			</p>
-
-			<div class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
 				<a
 					href="#free-chapter-review"
-					class="inline-flex items-center justify-center gap-3 rounded-xs border border-pale-pink/25 bg-sage-green px-8 py-4 text-xs font-semibold uppercase tracking-[0.15em] text-neutral-brown shadow-[0_8px_24px_rgba(0,0,0,0.28)] transition duration-200 hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pale-pink"
+					class="inline-flex shrink-0 items-center justify-center gap-2.5 rounded-sm bg-sage-green px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-neutral-brown transition duration-200 hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
 				>
-					<span>Book a Free Opening Chapter Review</span>
+					<span>Book a free opening chapter review</span>
 					<span aria-hidden="true">&rarr;</span>
-				</a>
-
-				<a
-					href="#process"
-					class="text-xs font-medium uppercase tracking-[0.16em] text-pale-pink/90 underline decoration-pale-pink/45 underline-offset-4 transition-colors hover:text-pale-pink"
-				>
-					See How It Works
 				</a>
 			</div>
 		</div>
@@ -484,12 +454,19 @@ import Layout from '../layouts/Layout.astro';
 	</div>
 </Layout>
 
-<style>
-	.hero-logo {
-		width: 70%;
-		max-width: 400px;
+<script>
+	const heroVideo = document.querySelector<HTMLVideoElement>('#hero-video');
+	if (heroVideo) {
+		let replayTimeoutId: ReturnType<typeof setTimeout> | undefined;
+
+		heroVideo.addEventListener('ended', () => {
+			clearTimeout(replayTimeoutId);
+			replayTimeoutId = setTimeout(() => {
+				heroVideo.play().catch(() => {});
+			}, 15000);
+		});
 	}
-</style>
+</script>
 
 <script is:inline>
 	(() => {
