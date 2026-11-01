@@ -10,9 +10,8 @@ export default {
 				'brand-accent': '#E2B4BD',
 			},
 			fontFamily: {
-				serif: ['"Cormorant Garamond"', '"Georgia"', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
 				sans: [
-					'"Plus Jakarta Sans"',
+					'"Host Grotesk"',
 					'system-ui',
 					'-apple-system',
 					'BlinkMacSystemFont',
