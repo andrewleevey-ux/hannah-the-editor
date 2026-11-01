@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro';
 	<!-- Full-Width Responsive Video Hero -->
 	<section
 		aria-label="Hero"
-		class="relative isolate flex min-h-[85vh] w-full flex-col justify-end overflow-hidden border-b border-neutral-brown/20 bg-neutral-brown text-pale-pink"
+		class="relative isolate flex min-h-[80vh] w-full flex-col justify-end overflow-hidden bg-neutral-brown text-pale-pink"
 	>
 		<!-- Background HTML5 Video -->
 		<video
@@ -16,15 +16,15 @@ import Layout from '../layouts/Layout.astro';
 			playsinline
 			poster="/hero-poster.svg"
 			aria-hidden="true"
-			class="pointer-events-none absolute inset-0 h-full w-full object-cover"
+			class="pointer-events-none absolute inset-0 w-full h-full object-cover z-0"
 		>
 			<source src="/videos/hannahtheeditor_videohero.mp4" type="video/mp4" />
 		</video>
 
-		<!-- Subtle Bottom Vignette for Floating CTA & Credibility Bar Contrast -->
+		<!-- Subtle Bottom Vignette for Floating CTA Contrast -->
 		<div
 			aria-hidden="true"
-			class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#211814]/80 via-[#211814]/20 to-transparent"
+			class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-[#211814]/80 via-[#211814]/20 to-transparent"
 		></div>
 
 		<!-- Floating CTA Box Positioned Over Video -->
@@ -43,39 +43,39 @@ import Layout from '../layouts/Layout.astro';
 				</a>
 			</div>
 		</div>
-
-		<!-- Architectural Hero Credibility Bar -->
-		<div class="relative z-10 w-full border-t border-pale-pink/15 bg-[#211814]/60 backdrop-blur-xs">
-			<dl class="mx-auto grid max-w-6xl grid-cols-1 divide-y divide-pale-pink/15 px-6 sm:grid-cols-3 sm:divide-y-0 sm:divide-x sm:px-10">
-				<div class="py-5 sm:pr-8">
-					<dt class="text-xs font-semibold uppercase tracking-[0.14em] text-pale-pink">
-						1,500 Words Reviewed Free
-					</dt>
-					<dd class="mt-1 text-xs text-pale-pink/75">
-						Tracked line edits &amp; 1-page diagnostic editorial memo
-					</dd>
-				</div>
-
-				<div class="py-5 sm:px-8">
-					<dt class="text-xs font-semibold uppercase tracking-[0.14em] text-pale-pink">
-						140+ Manuscripts &middot; 38 Deals
-					</dt>
-					<dd class="mt-1 text-xs text-pale-pink/75">
-						Clients represented across Big-Five &amp; acclaimed indie presses
-					</dd>
-				</div>
-
-				<div class="py-5 sm:pl-8">
-					<dt class="text-xs font-semibold uppercase tracking-[0.14em] text-pale-pink">
-						48-Hour Editorial Turnaround
-					</dt>
-					<dd class="mt-1 text-xs text-pale-pink/75">
-						Candid, confidential feedback with zero obligation to book
-					</dd>
-				</div>
-			</dl>
-		</div>
 	</section>
+
+	<!-- Architectural Hero Credibility Bar -->
+	<div class="relative z-10 w-full border-t border-pale-pink/15 border-b border-neutral-brown/20 bg-black text-pale-pink">
+		<dl class="mx-auto grid max-w-6xl grid-cols-1 divide-y divide-pale-pink/15 px-6 sm:grid-cols-3 sm:divide-y-0 sm:divide-x sm:px-10">
+			<div class="py-5 sm:pr-8">
+				<dt class="text-xs font-semibold uppercase tracking-[0.14em] text-pale-pink">
+					1,500 Words Reviewed Free
+				</dt>
+				<dd class="mt-1 text-xs text-pale-pink/75">
+					Tracked line edits &amp; 1-page diagnostic editorial memo
+				</dd>
+			</div>
+
+			<div class="py-5 sm:px-8">
+				<dt class="text-xs font-semibold uppercase tracking-[0.14em] text-pale-pink">
+					140+ Manuscripts &middot; 38 Deals
+				</dt>
+				<dd class="mt-1 text-xs text-pale-pink/75">
+					Clients represented across Big-Five &amp; acclaimed indie presses
+				</dd>
+			</div>
+
+			<div class="py-5 sm:pl-8">
+				<dt class="text-xs font-semibold uppercase tracking-[0.14em] text-pale-pink">
+					48-Hour Editorial Turnaround
+				</dt>
+				<dd class="mt-1 text-xs text-pale-pink/75">
+					Candid, confidential feedback with zero obligation to book
+				</dd>
+			</div>
+		</dl>
+	</div>
 
 	<!-- Architectural Editorial Grid Container -->
 	<div class="mx-auto max-w-6xl border-x border-neutral-brown/15">
