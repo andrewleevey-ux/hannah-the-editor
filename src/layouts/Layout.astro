@@ -39,8 +39,8 @@ const {
 	</head>
 	<body class="flex min-h-screen flex-col bg-brand-base font-sans text-brand-ink selection:bg-brand-accent/20">
 		<!-- Top Navigation Bar -->
-		<header class="sticky top-0 z-30 w-full border-b border-brand-ink/10 bg-brand-base/95 backdrop-blur-sm">
-			<div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+		<header class="sticky top-0 z-50 w-full border-b border-brand-ink/10 bg-brand-base/95 backdrop-blur-sm">
+			<div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
 				<a href="/" aria-label="Hannah The Editor — Home" class="block shrink-0">
 					<img
 						src="/images/logo.png"
@@ -51,8 +51,9 @@ const {
 					/>
 				</a>
 
-				<div class="flex flex-wrap items-center gap-6 sm:gap-8">
-					<nav aria-label="Primary" class="hidden items-center gap-7 text-sm font-medium text-brand-ink/80 md:flex">
+				<!-- Desktop Navigation Links & Primary CTA (Hidden on Mobile) -->
+				<div class="hidden items-center gap-6 md:flex lg:gap-8">
+					<nav aria-label="Primary" class="flex items-center gap-7 text-sm font-medium text-brand-ink/80">
 						<a href="#services" class="transition-colors hover:text-brand-ink">Services</a>
 						<a href="#features" class="transition-colors hover:text-brand-ink">Approach</a>
 						<a href="#highlights" class="transition-colors hover:text-brand-ink">Process</a>
@@ -66,8 +67,103 @@ const {
 						Free Chapter Review
 					</a>
 				</div>
+
+				<!-- Mobile Burger Toggle Button (Visible on Mobile Only) -->
+				<button
+					id="mobile-menu-toggle"
+					type="button"
+					aria-label="Open navigation menu"
+					aria-expanded="false"
+					aria-controls="mobile-menu-overlay"
+					class="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full text-brand-ink transition-colors hover:bg-brand-ink/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-ink md:hidden"
+				>
+					<!-- Lucide Menu Icon (Default Closed State) -->
+					<svg
+						id="mobile-icon-menu"
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						aria-hidden="true"
+						class="lucide lucide-menu h-6 w-6"
+					>
+						<line x1="4" x2="20" y1="12" y2="12"></line>
+						<line x1="4" x2="20" y1="6" y2="6"></line>
+						<line x1="4" x2="20" y1="18" y2="18"></line>
+					</svg>
+
+					<!-- Lucide X Icon (Open State) -->
+					<svg
+						id="mobile-icon-close"
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						aria-hidden="true"
+						class="lucide lucide-x hidden h-6 w-6"
+					>
+						<path d="M18 6 6 18"></path>
+						<path d="m6 6 12 12"></path>
+					</svg>
+				</button>
 			</div>
 		</header>
+
+		<!-- Full-Screen Mobile Menu Overlay (Sits Below Sticky Header z-50) -->
+		<div
+			id="mobile-menu-overlay"
+			aria-label="Mobile navigation"
+			class="fixed inset-0 z-40 hidden flex-col items-start justify-start bg-brand-base px-4 pt-32 pb-10 sm:px-6 sm:pt-36 md:hidden"
+		>
+			<nav aria-label="Mobile Primary" class="flex w-full flex-col items-start gap-7 text-left">
+				<a
+					href="#services"
+					data-mobile-nav-link
+					class="text-2xl font-medium text-brand-ink transition-colors hover:text-brand-ink/70"
+				>
+					Services
+				</a>
+				<a
+					href="#features"
+					data-mobile-nav-link
+					class="text-2xl font-medium text-brand-ink transition-colors hover:text-brand-ink/70"
+				>
+					Approach
+				</a>
+				<a
+					href="#highlights"
+					data-mobile-nav-link
+					class="text-2xl font-medium text-brand-ink transition-colors hover:text-brand-ink/70"
+				>
+					Process
+				</a>
+				<a
+					href="#reviews"
+					data-mobile-nav-link
+					class="text-2xl font-medium text-brand-ink transition-colors hover:text-brand-ink/70"
+				>
+					Reviews
+				</a>
+
+				<a
+					href="#free-chapter-review"
+					data-mobile-nav-link
+					class="mt-4 inline-flex items-center justify-center rounded-full bg-brand-accent px-8 py-4 text-base font-semibold tracking-wide text-brand-ink shadow-xs transition duration-200 hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-ink"
+				>
+					Free Chapter Review
+				</a>
+			</nav>
+		</div>
 
 		<!-- Main Page Content -->
 		<main class="w-full flex-1">
@@ -157,6 +253,60 @@ const {
 				);
 
 				items.forEach((el) => observer.observe(el));
+			})();
+
+			// Mobile Burger Menu Toggle & Body Scroll Lock
+			(() => {
+				const toggleBtn = document.getElementById('mobile-menu-toggle');
+				const overlay = document.getElementById('mobile-menu-overlay');
+				const iconMenu = document.getElementById('mobile-icon-menu');
+				const iconClose = document.getElementById('mobile-icon-close');
+				const navLinks = document.querySelectorAll('[data-mobile-nav-link]');
+
+				if (!toggleBtn || !overlay || !iconMenu || !iconClose) return;
+
+				let isOpen = false;
+
+				function setMenuOpen(nextState) {
+					isOpen = nextState;
+					toggleBtn.setAttribute('aria-expanded', String(isOpen));
+					toggleBtn.setAttribute(
+						'aria-label',
+						isOpen ? 'Close navigation menu' : 'Open navigation menu'
+					);
+
+					overlay.classList.toggle('hidden', !isOpen);
+					overlay.classList.toggle('flex', isOpen);
+
+					iconMenu.classList.toggle('hidden', isOpen);
+					iconClose.classList.toggle('hidden', !isOpen);
+
+					document.body.classList.toggle('overflow-hidden', isOpen);
+				}
+
+				toggleBtn.addEventListener('click', () => {
+					setMenuOpen(!isOpen);
+				});
+
+				navLinks.forEach((link) => {
+					link.addEventListener('click', () => {
+						if (isOpen) setMenuOpen(false);
+					});
+				});
+
+				document.addEventListener('keydown', (event) => {
+					if (event.key === 'Escape' && isOpen) {
+						setMenuOpen(false);
+						toggleBtn.focus();
+					}
+				});
+
+				const mdMedia = window.matchMedia('(min-width: 768px)');
+				mdMedia.addEventListener('change', (event) => {
+					if (event.matches && isOpen) {
+						setMenuOpen(false);
+					}
+				});
 			})();
 		</script>
 	</body>
