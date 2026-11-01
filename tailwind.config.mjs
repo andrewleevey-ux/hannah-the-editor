@@ -5,7 +5,7 @@ export default {
 		extend: {
 			colors: {
 				'pale-pink': '#FBF4F5',
-				'sage-green': '#8FA494',
+				'pastel-pink': '#E6C8CB',
 				'neutral-brown': '#4A3B32',
 			},
 			fontFamily: {
