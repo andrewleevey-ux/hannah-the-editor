@@ -2,28 +2,65 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Hannah the Editor — Book a Free Opening Chapter Review">
-	<!-- Prominent Editorial Hero Section -->
-	<section class="grid grid-cols-1 border-b border-neutral-brown/15 lg:grid-cols-12">
-		<div class="px-6 py-14 sm:px-12 sm:py-20 lg:col-span-7 lg:py-24 xl:col-span-8">
-			<p class="text-[11px] font-medium uppercase tracking-[0.22em] text-neutral-brown/70">
+<Layout title="Hannah The Editor — Book a Free Opening Chapter Review">
+	<!-- Full-Width Responsive Video Hero with Overlaid Brand Logo -->
+	<section
+		aria-label="Hero"
+		class="relative isolate flex min-h-[85vh] w-full flex-col justify-between overflow-hidden border-b border-neutral-brown/20 bg-neutral-brown text-pale-pink"
+	>
+		<!-- Background HTML5 Video -->
+		<video
+			autoplay
+			loop
+			muted
+			playsinline
+			poster="/hero-poster.svg"
+			aria-hidden="true"
+			class="pointer-events-none absolute inset-0 h-full w-full object-cover"
+		>
+			<source src="/hero-video.webm" type="video/webm" />
+			<source src="/hero-video.mp4" type="video/mp4" />
+		</video>
+
+		<!-- High-Contrast Editorial Scrim Overlay -->
+		<div
+			aria-hidden="true"
+			class="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#241B16]/80 via-[#382C25]/72 to-[#211814]/88"
+		></div>
+
+		<!-- Centered Overlaid Logo, Value Proposition & Primary CTA -->
+		<div class="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-6 py-16 text-center sm:px-10 sm:py-24">
+			<!-- Overlaid 'Hannah The Editor' Logo (width: 70%, max-width: 400px) -->
+			<a href="/" class="block w-full" aria-label="Hannah The Editor — Home">
+				<img
+					src="/logo.svg"
+					alt="Hannah The Editor"
+					width="400"
+					height="96"
+					class="hero-logo mx-auto block h-auto w-[70%] max-w-[400px] drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]"
+				/>
+			</a>
+
+			<div aria-hidden="true" class="mt-7 h-px w-16 bg-pale-pink/40"></div>
+
+			<p class="mt-6 text-[11px] font-medium uppercase tracking-[0.24em] text-pale-pink/85">
 				Now Booking Spring &amp; Summer Editorial Slates
 			</p>
 
-			<h1 class="mt-5 max-w-2xl font-serif text-4xl font-normal leading-[1.08] tracking-[-0.01em] text-neutral-brown sm:text-5xl lg:text-[3.6rem]">
+			<h1 class="mt-4 max-w-3xl font-serif text-4xl font-normal leading-[1.08] tracking-[-0.01em] text-pale-pink sm:text-5xl lg:text-6xl">
 				Shape your draft into the manuscript agents and readers <em class="italic">cannot</em> put down.
 			</h1>
 
-			<p class="mt-6 max-w-xl text-base leading-relaxed text-neutral-brown/85 sm:text-lg">
+			<p class="mt-6 max-w-2xl text-base leading-relaxed text-pale-pink/90 sm:text-lg">
 				Incisive developmental guidance and line-by-line craft for fiction and narrative nonfiction
 				authors&mdash;elevating structure, tension, and prose rhythm while keeping every sentence
 				unmistakably yours.
 			</p>
 
-			<div class="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6">
+			<div class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
 				<a
 					href="#free-chapter-review"
-					class="inline-flex items-center justify-center gap-3 rounded-xs border border-neutral-brown/25 bg-sage-green px-7 py-4 text-xs font-semibold uppercase tracking-[0.15em] text-neutral-brown transition duration-200 hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-brown"
+					class="inline-flex items-center justify-center gap-3 rounded-xs border border-pale-pink/25 bg-sage-green px-8 py-4 text-xs font-semibold uppercase tracking-[0.15em] text-neutral-brown shadow-[0_8px_24px_rgba(0,0,0,0.28)] transition duration-200 hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pale-pink"
 				>
 					<span>Book a Free Opening Chapter Review</span>
 					<span aria-hidden="true">&rarr;</span>
@@ -31,426 +68,429 @@ import Layout from '../layouts/Layout.astro';
 
 				<a
 					href="#process"
-					class="text-xs font-medium uppercase tracking-[0.16em] text-neutral-brown/80 underline decoration-neutral-brown/35 underline-offset-4 transition-colors hover:text-neutral-brown"
+					class="text-xs font-medium uppercase tracking-[0.16em] text-pale-pink/90 underline decoration-pale-pink/45 underline-offset-4 transition-colors hover:text-pale-pink"
 				>
 					See How It Works
 				</a>
 			</div>
+		</div>
 
-			<dl class="mt-12 grid grid-cols-1 gap-4 border-t border-neutral-brown/15 pt-6 text-xs text-neutral-brown/75 sm:grid-cols-3">
-				<div>
-					<dt class="font-semibold uppercase tracking-[0.12em] text-neutral-brown">1,500 Words Free</dt>
-					<dd class="mt-1">Tracked line edits &amp; 1-page editorial memo</dd>
+		<!-- Architectural Hero Credibility Bar -->
+		<div class="relative z-10 w-full border-t border-pale-pink/15 bg-[#211814]/60 backdrop-blur-xs">
+			<dl class="mx-auto grid max-w-6xl grid-cols-1 divide-y divide-pale-pink/15 px-6 sm:grid-cols-3 sm:divide-y-0 sm:divide-x sm:px-10">
+				<div class="py-5 sm:pr-8">
+					<dt class="text-xs font-semibold uppercase tracking-[0.14em] text-pale-pink">
+						1,500 Words Reviewed Free
+					</dt>
+					<dd class="mt-1 text-xs text-pale-pink/75">
+						Tracked line edits &amp; 1-page diagnostic editorial memo
+					</dd>
 				</div>
-				<div>
-					<dt class="font-semibold uppercase tracking-[0.12em] text-neutral-brown">48-Hour Turnaround</dt>
-					<dd class="mt-1">Prompt, candid feedback on your opening hook</dd>
+
+				<div class="py-5 sm:px-8">
+					<dt class="text-xs font-semibold uppercase tracking-[0.14em] text-pale-pink">
+						140+ Manuscripts &middot; 38 Deals
+					</dt>
+					<dd class="mt-1 text-xs text-pale-pink/75">
+						Clients represented across Big-Five &amp; acclaimed indie presses
+					</dd>
 				</div>
-				<div>
-					<dt class="font-semibold uppercase tracking-[0.12em] text-neutral-brown">Zero Obligation</dt>
-					<dd class="mt-1">Experience my editorial eye before committing</dd>
+
+				<div class="py-5 sm:pl-8">
+					<dt class="text-xs font-semibold uppercase tracking-[0.14em] text-pale-pink">
+						48-Hour Editorial Turnaround
+					</dt>
+					<dd class="mt-1 text-xs text-pale-pink/75">
+						Candid, confidential feedback with zero obligation to book
+					</dd>
 				</div>
 			</dl>
 		</div>
-
-		<!-- Right Architectural Dossier Column -->
-		<aside class="flex flex-col justify-between divide-y divide-neutral-brown/15 border-t border-neutral-brown/15 lg:col-span-5 lg:border-t-0 lg:border-l xl:col-span-4">
-			<div class="px-6 py-8 sm:px-10">
-				<p class="text-[11px] uppercase tracking-[0.2em] text-neutral-brown/65">01 / Track Record</p>
-				<p class="mt-2 font-serif text-4xl font-normal text-neutral-brown">140+</p>
-				<p class="mt-1 text-sm leading-relaxed text-neutral-brown/80">
-					Full-length novels, memoirs, and query packages edited across literary and commercial genres.
-				</p>
-			</div>
-
-			<div class="px-6 py-8 sm:px-10">
-				<p class="text-[11px] uppercase tracking-[0.2em] text-neutral-brown/65">02 / Publishing Outcomes</p>
-				<p class="mt-2 font-serif text-4xl font-normal text-neutral-brown">38 Deals</p>
-				<p class="mt-1 text-sm leading-relaxed text-neutral-brown/80">
-					Clients signed with literary agents, Big-Five imprints, and award-winning independent presses.
-				</p>
-			</div>
-
-			<figure class="px-6 py-8 sm:px-10">
-				<blockquote class="font-serif text-xl italic leading-snug text-neutral-brown">
-					&ldquo;Hannah pinpointed why my opening chapter stalled within three paragraphs. Two weeks after
-					revising with her notes, I had four full manuscript requests.&rdquo;
-				</blockquote>
-				<figcaption class="mt-4 text-xs uppercase tracking-[0.15em] text-neutral-brown/70">
-					&mdash; Clara Vance, Literary Fiction Author
-				</figcaption>
-			</figure>
-		</aside>
 	</section>
 
-	<!-- Editorial Genres & Specialties Strip -->
-	<section
-		data-reveal
-		aria-label="Genres served"
-		class="flex flex-wrap items-center justify-between gap-4 border-b border-neutral-brown/15 px-6 py-5 text-xs uppercase tracking-[0.18em] text-neutral-brown/75 sm:px-12"
-	>
-		<span class="font-semibold text-neutral-brown">Editorial Focus</span>
-		<span>Literary &amp; Upmarket Fiction</span>
-		<span aria-hidden="true" class="hidden sm:inline">&middot;</span>
-		<span>Memoir &amp; Narrative Nonfiction</span>
-		<span aria-hidden="true" class="hidden sm:inline">&middot;</span>
-		<span>Historical &amp; Speculative</span>
-		<span aria-hidden="true" class="hidden sm:inline">&middot;</span>
-		<span>Agent Submission Packages</span>
-	</section>
-
-	<!-- Services Section with Structural Grid Lines -->
-	<section id="services" class="border-b border-neutral-brown/15">
-		<div
+	<!-- Architectural Editorial Grid Container -->
+	<div class="mx-auto max-w-6xl border-x border-neutral-brown/15">
+		<!-- Editorial Genres & Specialties Strip -->
+		<section
 			data-reveal
-			class="grid grid-cols-1 items-end gap-6 border-b border-neutral-brown/15 px-6 py-14 sm:px-12 sm:py-16 lg:grid-cols-12"
+			aria-label="Genres served"
+			class="flex flex-wrap items-center justify-between gap-4 border-b border-neutral-brown/15 px-6 py-5 text-xs uppercase tracking-[0.18em] text-neutral-brown/75 sm:px-12"
 		>
-			<div class="lg:col-span-7">
-				<p class="text-[11px] uppercase tracking-[0.22em] text-neutral-brown/65">
-					Editorial Disciplines
-				</p>
-				<h2 class="mt-3 font-serif text-3xl font-normal leading-tight text-neutral-brown sm:text-4xl">
-					Precision editorial craft matched to your manuscript&rsquo;s stage.
-				</h2>
-			</div>
-			<p class="text-sm leading-relaxed text-neutral-brown/80 lg:col-span-5">
-				Not sure whether your book needs big-picture structural work or sentence-level polish? Your free
-				opening chapter review includes a clear recommendation so you invest only where it counts.
-			</p>
-		</div>
+			<span class="font-semibold text-neutral-brown">Editorial Focus</span>
+			<span>Literary &amp; Upmarket Fiction</span>
+			<span aria-hidden="true" class="hidden sm:inline">&middot;</span>
+			<span>Memoir &amp; Narrative Nonfiction</span>
+			<span aria-hidden="true" class="hidden sm:inline">&middot;</span>
+			<span>Historical &amp; Speculative</span>
+			<span aria-hidden="true" class="hidden sm:inline">&middot;</span>
+			<span>Agent Submission Packages</span>
+		</section>
 
-		<div class="grid grid-cols-1 divide-y divide-neutral-brown/15 md:grid-cols-3 md:divide-y-0 md:divide-x">
-			<article data-reveal style="--reveal-delay: 0ms" class="flex flex-col justify-between px-6 py-12 sm:px-10">
-				<div>
-					<span class="text-xs font-medium tracking-[0.2em] text-neutral-brown/60">I.</span>
-					<h3 class="mt-4 font-serif text-2xl font-medium text-neutral-brown">
-						Developmental Editing
-					</h3>
-					<p class="mt-3 text-sm leading-relaxed text-neutral-brown/80">
-						A deep architectural evaluation of plot momentum, character motivation, stakes, point of view,
-						and scene-by-scene pacing.
-					</p>
-				</div>
-				<p class="mt-8 border-t border-neutral-brown/15 pt-4 text-xs uppercase tracking-[0.14em] text-neutral-brown/70">
-					12&ndash;18 Page Editorial Letter + Margin Notes
-				</p>
-			</article>
-
-			<article data-reveal style="--reveal-delay: 90ms" class="flex flex-col justify-between px-6 py-12 sm:px-10">
-				<div>
-					<span class="text-xs font-medium tracking-[0.2em] text-neutral-brown/60">II.</span>
-					<h3 class="mt-4 font-serif text-2xl font-medium text-neutral-brown">
-						Line &amp; Stylistic Editing
-					</h3>
-					<p class="mt-3 text-sm leading-relaxed text-neutral-brown/80">
-						Paragraph-by-paragraph refinement of cadence, dialogue authenticity, clarity, and emotional
-						resonance&mdash;never flattening your natural voice.
-					</p>
-				</div>
-				<p class="mt-8 border-t border-neutral-brown/15 pt-4 text-xs uppercase tracking-[0.14em] text-neutral-brown/70">
-					Tracked Manuscript Pass + Custom Style Sheet
-				</p>
-			</article>
-
-			<article data-reveal style="--reveal-delay: 180ms" class="flex flex-col justify-between px-6 py-12 sm:px-10">
-				<div>
-					<span class="text-xs font-medium tracking-[0.2em] text-neutral-brown/60">III.</span>
-					<h3 class="mt-4 font-serif text-2xl font-medium text-neutral-brown">
-						Agent Submission Intensive
-					</h3>
-					<p class="mt-3 text-sm leading-relaxed text-neutral-brown/80">
-						Focused calibration of your query letter, synopsis, and opening fifty pages to earn immediate
-						full-manuscript requests from literary agents.
-					</p>
-				</div>
-				<p class="mt-8 border-t border-neutral-brown/15 pt-4 text-xs uppercase tracking-[0.14em] text-neutral-brown/70">
-					Query Package + Two Rounds of Opening Polish
-				</p>
-			</article>
-		</div>
-	</section>
-
-	<!-- Frictionless 3-Step Process Section -->
-	<section id="process" class="grid grid-cols-1 border-b border-neutral-brown/15 lg:grid-cols-12">
-		<div
-			data-reveal
-			class="border-b border-neutral-brown/15 px-6 py-14 sm:px-12 sm:py-16 lg:col-span-5 lg:border-r lg:border-b-0"
-		>
-			<p class="text-[11px] uppercase tracking-[0.22em] text-neutral-brown/65">How It Works</p>
-			<h2 class="mt-3 font-serif text-3xl font-normal leading-tight text-neutral-brown sm:text-4xl">
-				Experience how we work together before spending a cent.
-			</h2>
-			<p class="mt-4 text-sm leading-relaxed text-neutral-brown/80">
-				Choosing an editor is deeply personal. That is why every potential collaboration begins with a
-				complimentary review of your opening pages&mdash;giving you actionable craft feedback and complete
-				confidence in our creative fit.
-			</p>
-		</div>
-
-		<ol class="divide-y divide-neutral-brown/15 lg:col-span-7">
-			<li data-reveal class="grid grid-cols-1 gap-3 px-6 py-9 sm:grid-cols-12 sm:px-10">
-				<span class="font-serif text-2xl italic text-neutral-brown/70 sm:col-span-2">01</span>
-				<div class="sm:col-span-10">
-					<h3 class="text-sm font-semibold uppercase tracking-[0.14em] text-neutral-brown">
-						Share Your Opening Chapter
-					</h3>
-					<p class="mt-2 text-sm leading-relaxed text-neutral-brown/80">
-						Submit up to 1,500 words from Chapter One using the form below, along with your genre, word
-						count, and publishing goals.
-					</p>
-				</div>
-			</li>
-
-			<li data-reveal class="grid grid-cols-1 gap-3 px-6 py-9 sm:grid-cols-12 sm:px-10">
-				<span class="font-serif text-2xl italic text-neutral-brown/70 sm:col-span-2">02</span>
-				<div class="sm:col-span-10">
-					<h3 class="text-sm font-semibold uppercase tracking-[0.14em] text-neutral-brown">
-						Receive Tracked Edits &amp; Diagnostic Notes
-					</h3>
-					<p class="mt-2 text-sm leading-relaxed text-neutral-brown/80">
-						Within 48 business hours, you will receive line-edited sample pages plus a candid editorial memo
-						evaluating your opening hook, voice, and narrative tension.
-					</p>
-				</div>
-			</li>
-
-			<li data-reveal class="grid grid-cols-1 gap-3 px-6 py-9 sm:grid-cols-12 sm:px-10">
-				<span class="font-serif text-2xl italic text-neutral-brown/70 sm:col-span-2">03</span>
-				<div class="sm:col-span-10">
-					<h3 class="text-sm font-semibold uppercase tracking-[0.14em] text-neutral-brown">
-						Decide With Zero Pressure
-					</h3>
-					<p class="mt-2 text-sm leading-relaxed text-neutral-brown/80">
-						Along with your review, you will receive a transparent flat-rate quote and proposed schedule.
-						Book your slot if you love the vision&mdash;or keep the notes with my compliments.
-					</p>
-				</div>
-			</li>
-		</ol>
-	</section>
-
-	<!-- Editorial Praise / Testimonials -->
-	<section id="praise" class="border-b border-neutral-brown/15">
-		<div class="grid grid-cols-1 divide-y divide-neutral-brown/15 md:grid-cols-2 md:divide-y-0 md:divide-x">
-			<figure data-reveal class="px-6 py-14 sm:px-12 sm:py-16">
-				<p class="text-[11px] uppercase tracking-[0.2em] text-neutral-brown/60">Author Endorsement</p>
-				<blockquote class="mt-5 font-serif text-2xl italic leading-relaxed text-neutral-brown sm:text-[1.65rem]">
-					&ldquo;Her free opening chapter review alone taught me more about scene tension than two years of
-					workshops. Working with Hannah turned a sprawling third draft into a debut novel acquired at
-					auction.&rdquo;
-				</blockquote>
-				<figcaption class="mt-6 text-xs uppercase tracking-[0.16em] text-neutral-brown/75">
-					Julian Mercer &mdash; Author of <cite class="not-italic underline decoration-neutral-brown/30 underline-offset-4">The Glass Conservatory</cite>
-				</figcaption>
-			</figure>
-
-			<figure data-reveal style="--reveal-delay: 100ms" class="px-6 py-14 sm:px-12 sm:py-16">
-				<p class="text-[11px] uppercase tracking-[0.2em] text-neutral-brown/60">Author Endorsement</p>
-				<blockquote class="mt-5 font-serif text-2xl italic leading-relaxed text-neutral-brown sm:text-[1.65rem]">
-					&ldquo;Rarely do you find an editor who combines razor-sharp structural instinct with such warmth
-					and reverence for an author&rsquo;s voice. Every margin note made my book braver and clearer.&rdquo;
-				</blockquote>
-				<figcaption class="mt-6 text-xs uppercase tracking-[0.16em] text-neutral-brown/75">
-					Nadia Okafor &mdash; Memoirist &amp; Essayist
-				</figcaption>
-			</figure>
-		</div>
-	</section>
-
-	<!-- Dedicated Lead Capture Section: Book a Free Opening Chapter Review -->
-	<section
-		id="free-chapter-review"
-		aria-labelledby="lead-capture-heading"
-		class="scroll-mt-8 grid grid-cols-1 lg:grid-cols-12"
-	>
-		<!-- Left Value & Reassurance Column -->
-		<div
-			data-reveal
-			class="flex flex-col justify-between border-b border-neutral-brown/15 px-6 py-14 sm:px-12 sm:py-20 lg:col-span-5 lg:border-r lg:border-b-0"
-		>
-			<div>
-				<p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-brown/70">
-					Complimentary Consultation
-				</p>
-				<h2
-					id="lead-capture-heading"
-					class="mt-3 font-serif text-3xl font-normal leading-tight text-neutral-brown sm:text-4xl lg:text-[2.65rem]"
-				>
-					Book a free opening chapter review.
-				</h2>
-				<p class="mt-4 text-sm leading-relaxed text-neutral-brown/85">
-					Send the opening pages of your manuscript for a thoughtful, no-obligation diagnostic from Hannah.
-				</p>
-
-				<ul class="mt-8 space-y-4 border-t border-neutral-brown/15 pt-6 text-sm text-neutral-brown/85">
-					<li class="flex items-start gap-3">
-						<span aria-hidden="true" class="mt-0.5 font-serif text-base italic text-neutral-brown">i.</span>
-						<span>Tracked line and margin edits on up to 1,500 words of your opening chapter.</span>
-					</li>
-					<li class="flex items-start gap-3">
-						<span aria-hidden="true" class="mt-0.5 font-serif text-base italic text-neutral-brown">ii.</span>
-						<span>A tailored 1-page editorial assessment covering hook, voice, and narrative momentum.</span>
-					</li>
-					<li class="flex items-start gap-3">
-						<span aria-hidden="true" class="mt-0.5 font-serif text-base italic text-neutral-brown">iii.</span>
-						<span>A transparent project quote, timeline, and recommended editing level within 48 hours.</span>
-					</li>
-				</ul>
-			</div>
-
-			<div class="mt-10 border-t border-neutral-brown/15 pt-6 text-xs leading-relaxed text-neutral-brown/70">
-				<strong class="font-semibold uppercase tracking-[0.12em] text-neutral-brown">
-					100% Author Confidentiality:
-				</strong>
-				Your pages remain strictly your intellectual property and are never shared, republished, or used to
-				train AI models.
-			</div>
-		</div>
-
-		<!-- Right Dedicated Lead Capture Form Embed Container -->
-		<div
-			data-reveal
-			style="--reveal-delay: 100ms"
-			class="bg-[#FFFDFD]/70 px-6 py-14 sm:px-12 sm:py-20 lg:col-span-7"
-		>
+		<!-- Services Section with Structural Grid Lines -->
+		<section id="services" class="scroll-mt-16 border-b border-neutral-brown/15">
 			<div
-				id="chapter-review-embed"
-				data-form-embed="opening-chapter-review"
-				class="rounded-xs border border-neutral-brown/20 bg-pale-pink/45 p-6 sm:p-10"
+				data-reveal
+				class="grid grid-cols-1 items-end gap-6 border-b border-neutral-brown/15 px-6 py-14 sm:px-12 sm:py-16 lg:grid-cols-12"
 			>
-				<!-- Embed external CRM / form widget here (e.g., Tally, ConvertKit, Dubsado, Typeform) or use the native lead form below -->
-				<form id="opening-chapter-form" class="space-y-6">
-					<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-						<div>
-							<label
-								for="author-name"
-								class="block text-[11px] font-semibold uppercase tracking-[0.16em] text-neutral-brown"
-							>
-								Your Name <span aria-hidden="true">*</span>
-							</label>
-							<input
-								id="author-name"
-								name="name"
-								type="text"
-								required
-								autocomplete="name"
-								placeholder="Jane Doe"
-								class="mt-2 block w-full border-b border-neutral-brown/35 bg-transparent py-2.5 text-sm text-neutral-brown placeholder:text-neutral-brown/40 focus:border-neutral-brown focus:outline-none"
-							/>
-						</div>
+				<div class="lg:col-span-7">
+					<p class="text-[11px] uppercase tracking-[0.22em] text-neutral-brown/65">
+						Editorial Disciplines
+					</p>
+					<h2 class="mt-3 font-serif text-3xl font-normal leading-tight text-neutral-brown sm:text-4xl">
+						Precision editorial craft matched to your manuscript&rsquo;s stage.
+					</h2>
+				</div>
+				<p class="text-sm leading-relaxed text-neutral-brown/80 lg:col-span-5">
+					Not sure whether your book needs big-picture structural work or sentence-level polish? Your free
+					opening chapter review includes a clear recommendation so you invest only where it counts.
+				</p>
+			</div>
 
-						<div>
-							<label
-								for="author-email"
-								class="block text-[11px] font-semibold uppercase tracking-[0.16em] text-neutral-brown"
-							>
-								Email Address <span aria-hidden="true">*</span>
-							</label>
-							<input
-								id="author-email"
-								name="email"
-								type="email"
-								required
-								autocomplete="email"
-								placeholder="jane@example.com"
-								class="mt-2 block w-full border-b border-neutral-brown/35 bg-transparent py-2.5 text-sm text-neutral-brown placeholder:text-neutral-brown/40 focus:border-neutral-brown focus:outline-none"
-							/>
-						</div>
-					</div>
-
-					<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-						<div>
-							<label
-								for="book-genre"
-								class="block text-[11px] font-semibold uppercase tracking-[0.16em] text-neutral-brown"
-							>
-								Genre / Category <span aria-hidden="true">*</span>
-							</label>
-							<select
-								id="book-genre"
-								name="genre"
-								required
-								class="mt-2 block w-full border-b border-neutral-brown/35 bg-pale-pink py-2.5 text-sm text-neutral-brown focus:border-neutral-brown focus:outline-none"
-							>
-								<option value="" disabled selected>Select your genre</option>
-								<option value="literary-fiction">Literary &amp; Upmarket Fiction</option>
-								<option value="commercial-fiction">Commercial / Book Club Fiction</option>
-								<option value="historical-speculative">Historical or Speculative Fiction</option>
-								<option value="memoir-nonfiction">Memoir &amp; Narrative Nonfiction</option>
-								<option value="other">Other</option>
-							</select>
-						</div>
-
-						<div>
-							<label
-								for="word-count"
-								class="block text-[11px] font-semibold uppercase tracking-[0.16em] text-neutral-brown"
-							>
-								Total Manuscript Word Count
-							</label>
-							<input
-								id="word-count"
-								name="wordCount"
-								type="text"
-								placeholder="e.g., 82,000 words"
-								class="mt-2 block w-full border-b border-neutral-brown/35 bg-transparent py-2.5 text-sm text-neutral-brown placeholder:text-neutral-brown/40 focus:border-neutral-brown focus:outline-none"
-							/>
-						</div>
-					</div>
-
+			<div class="grid grid-cols-1 divide-y divide-neutral-brown/15 md:grid-cols-3 md:divide-y-0 md:divide-x">
+				<article data-reveal style="--reveal-delay: 0ms" class="flex flex-col justify-between px-6 py-12 sm:px-10">
 					<div>
-						<label
-							for="chapter-excerpt"
-							class="block text-[11px] font-semibold uppercase tracking-[0.16em] text-neutral-brown"
-						>
-							Opening Chapter Excerpt or Google Doc Link <span aria-hidden="true">*</span>
-						</label>
-						<textarea
-							id="chapter-excerpt"
-							name="excerpt"
-							rows="5"
-							required
-							placeholder="Paste your opening pages (up to 1,500 words) or share a view-only document link along with a brief synopsis..."
-							class="mt-2 block w-full rounded-xs border border-neutral-brown/25 bg-[#FFFDFD]/80 p-3.5 text-sm leading-relaxed text-neutral-brown placeholder:text-neutral-brown/40 focus:border-neutral-brown focus:outline-none"
-						></textarea>
-					</div>
-
-					<div class="pt-2">
-						<button
-							type="submit"
-							class="inline-flex w-full cursor-pointer items-center justify-center gap-3 rounded-xs border border-neutral-brown/25 bg-sage-green px-7 py-4 text-xs font-semibold uppercase tracking-[0.16em] text-neutral-brown transition duration-200 hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-brown"
-						>
-							<span>Book a Free Opening Chapter Review</span>
-							<span aria-hidden="true">&rarr;</span>
-						</button>
-						<p class="mt-3 text-center text-[11px] text-neutral-brown/65">
-							Personal response from Hannah within 2 business days &middot; No spam, ever.
+						<span class="text-xs font-medium tracking-[0.2em] text-neutral-brown/60">I.</span>
+						<h3 class="mt-4 font-serif text-2xl font-medium text-neutral-brown">
+							Developmental Editing
+						</h3>
+						<p class="mt-3 text-sm leading-relaxed text-neutral-brown/80">
+							A deep architectural evaluation of plot momentum, character motivation, stakes, point of view,
+							and scene-by-scene pacing.
 						</p>
 					</div>
-				</form>
+					<p class="mt-8 border-t border-neutral-brown/15 pt-4 text-xs uppercase tracking-[0.14em] text-neutral-brown/70">
+						12&ndash;18 Page Editorial Letter + Margin Notes
+					</p>
+				</article>
 
-				<div
-					id="form-confirmation"
-					hidden
-					role="status"
-					aria-live="polite"
-					class="py-10 text-center"
-				>
-					<p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-brown/65">
-						Submission Received
+				<article data-reveal style="--reveal-delay: 90ms" class="flex flex-col justify-between px-6 py-12 sm:px-10">
+					<div>
+						<span class="text-xs font-medium tracking-[0.2em] text-neutral-brown/60">II.</span>
+						<h3 class="mt-4 font-serif text-2xl font-medium text-neutral-brown">
+							Line &amp; Stylistic Editing
+						</h3>
+						<p class="mt-3 text-sm leading-relaxed text-neutral-brown/80">
+							Paragraph-by-paragraph refinement of cadence, dialogue authenticity, clarity, and emotional
+							resonance&mdash;never flattening your natural voice.
+						</p>
+					</div>
+					<p class="mt-8 border-t border-neutral-brown/15 pt-4 text-xs uppercase tracking-[0.14em] text-neutral-brown/70">
+						Tracked Manuscript Pass + Custom Style Sheet
 					</p>
-					<h3 class="mt-3 font-serif text-3xl text-neutral-brown">
-						Thank you for trusting me with your pages.
-					</h3>
-					<p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-neutral-brown/80">
-						Your opening chapter request has been logged. Keep an eye on your inbox&mdash;Hannah will reply
-						within 48 business hours with your tracked sample edit and editorial memo.
+				</article>
+
+				<article data-reveal style="--reveal-delay: 180ms" class="flex flex-col justify-between px-6 py-12 sm:px-10">
+					<div>
+						<span class="text-xs font-medium tracking-[0.2em] text-neutral-brown/60">III.</span>
+						<h3 class="mt-4 font-serif text-2xl font-medium text-neutral-brown">
+							Agent Submission Intensive
+						</h3>
+						<p class="mt-3 text-sm leading-relaxed text-neutral-brown/80">
+							Focused calibration of your query letter, synopsis, and opening fifty pages to earn immediate
+							full-manuscript requests from literary agents.
+						</p>
+					</div>
+					<p class="mt-8 border-t border-neutral-brown/15 pt-4 text-xs uppercase tracking-[0.14em] text-neutral-brown/70">
+						Query Package + Two Rounds of Opening Polish
 					</p>
+				</article>
+			</div>
+		</section>
+
+		<!-- Frictionless 3-Step Process Section -->
+		<section id="process" class="scroll-mt-16 grid grid-cols-1 border-b border-neutral-brown/15 lg:grid-cols-12">
+			<div
+				data-reveal
+				class="border-b border-neutral-brown/15 px-6 py-14 sm:px-12 sm:py-16 lg:col-span-5 lg:border-r lg:border-b-0"
+			>
+				<p class="text-[11px] uppercase tracking-[0.22em] text-neutral-brown/65">How It Works</p>
+				<h2 class="mt-3 font-serif text-3xl font-normal leading-tight text-neutral-brown sm:text-4xl">
+					Experience how we work together before spending a cent.
+				</h2>
+				<p class="mt-4 text-sm leading-relaxed text-neutral-brown/80">
+					Choosing an editor is deeply personal. That is why every potential collaboration begins with a
+					complimentary review of your opening pages&mdash;giving you actionable craft feedback and complete
+					confidence in our creative fit.
+				</p>
+			</div>
+
+			<ol class="divide-y divide-neutral-brown/15 lg:col-span-7">
+				<li data-reveal class="grid grid-cols-1 gap-3 px-6 py-9 sm:grid-cols-12 sm:px-10">
+					<span class="font-serif text-2xl italic text-neutral-brown/70 sm:col-span-2">01</span>
+					<div class="sm:col-span-10">
+						<h3 class="text-sm font-semibold uppercase tracking-[0.14em] text-neutral-brown">
+							Share Your Opening Chapter
+						</h3>
+						<p class="mt-2 text-sm leading-relaxed text-neutral-brown/80">
+							Submit up to 1,500 words from Chapter One using the form below, along with your genre, word
+							count, and publishing goals.
+						</p>
+					</div>
+				</li>
+
+				<li data-reveal class="grid grid-cols-1 gap-3 px-6 py-9 sm:grid-cols-12 sm:px-10">
+					<span class="font-serif text-2xl italic text-neutral-brown/70 sm:col-span-2">02</span>
+					<div class="sm:col-span-10">
+						<h3 class="text-sm font-semibold uppercase tracking-[0.14em] text-neutral-brown">
+							Receive Tracked Edits &amp; Diagnostic Notes
+						</h3>
+						<p class="mt-2 text-sm leading-relaxed text-neutral-brown/80">
+							Within 48 business hours, you will receive line-edited sample pages plus a candid editorial
+							memo evaluating your opening hook, voice, and narrative tension.
+						</p>
+					</div>
+				</li>
+
+				<li data-reveal class="grid grid-cols-1 gap-3 px-6 py-9 sm:grid-cols-12 sm:px-10">
+					<span class="font-serif text-2xl italic text-neutral-brown/70 sm:col-span-2">03</span>
+					<div class="sm:col-span-10">
+						<h3 class="text-sm font-semibold uppercase tracking-[0.14em] text-neutral-brown">
+							Decide With Zero Pressure
+						</h3>
+						<p class="mt-2 text-sm leading-relaxed text-neutral-brown/80">
+							Along with your review, you will receive a transparent flat-rate quote and proposed schedule.
+							Book your slot if you love the vision&mdash;or keep the notes with my compliments.
+						</p>
+					</div>
+				</li>
+			</ol>
+		</section>
+
+		<!-- Editorial Praise / Testimonials -->
+		<section id="praise" class="scroll-mt-16 border-b border-neutral-brown/15">
+			<div class="grid grid-cols-1 divide-y divide-neutral-brown/15 md:grid-cols-2 md:divide-y-0 md:divide-x">
+				<figure data-reveal class="px-6 py-14 sm:px-12 sm:py-16">
+					<p class="text-[11px] uppercase tracking-[0.2em] text-neutral-brown/60">Author Endorsement</p>
+					<blockquote class="mt-5 font-serif text-2xl italic leading-relaxed text-neutral-brown sm:text-[1.65rem]">
+						&ldquo;Her free opening chapter review alone taught me more about scene tension than two years
+						of workshops. Working with Hannah turned a sprawling third draft into a debut novel acquired at
+						auction.&rdquo;
+					</blockquote>
+					<figcaption class="mt-6 text-xs uppercase tracking-[0.16em] text-neutral-brown/75">
+						Julian Mercer &mdash; Author of{' '}
+						<cite class="not-italic underline decoration-neutral-brown/30 underline-offset-4">
+							The Glass Conservatory
+						</cite>
+					</figcaption>
+				</figure>
+
+				<figure data-reveal style="--reveal-delay: 100ms" class="px-6 py-14 sm:px-12 sm:py-16">
+					<p class="text-[11px] uppercase tracking-[0.2em] text-neutral-brown/60">Author Endorsement</p>
+					<blockquote class="mt-5 font-serif text-2xl italic leading-relaxed text-neutral-brown sm:text-[1.65rem]">
+						&ldquo;Rarely do you find an editor who combines razor-sharp structural instinct with such
+						warmth and reverence for an author&rsquo;s voice. Every margin note made my book braver and
+						clearer.&rdquo;
+					</blockquote>
+					<figcaption class="mt-6 text-xs uppercase tracking-[0.16em] text-neutral-brown/75">
+						Nadia Okafor &mdash; Memoirist &amp; Essayist
+					</figcaption>
+				</figure>
+			</div>
+		</section>
+
+		<!-- Dedicated Lead Capture Section: Book a Free Opening Chapter Review -->
+		<section
+			id="free-chapter-review"
+			aria-labelledby="lead-capture-heading"
+			class="scroll-mt-16 grid grid-cols-1 lg:grid-cols-12"
+		>
+			<!-- Left Value & Reassurance Column -->
+			<div
+				data-reveal
+				class="flex flex-col justify-between border-b border-neutral-brown/15 px-6 py-14 sm:px-12 sm:py-20 lg:col-span-5 lg:border-r lg:border-b-0"
+			>
+				<div>
+					<p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-brown/70">
+						Complimentary Consultation
+					</p>
+					<h2
+						id="lead-capture-heading"
+						class="mt-3 font-serif text-3xl font-normal leading-tight text-neutral-brown sm:text-4xl lg:text-[2.65rem]"
+					>
+						Book a free opening chapter review.
+					</h2>
+					<p class="mt-4 text-sm leading-relaxed text-neutral-brown/85">
+						Send the opening pages of your manuscript for a thoughtful, no-obligation diagnostic from
+						Hannah.
+					</p>
+
+					<ul class="mt-8 space-y-4 border-t border-neutral-brown/15 pt-6 text-sm text-neutral-brown/85">
+						<li class="flex items-start gap-3">
+							<span aria-hidden="true" class="mt-0.5 font-serif text-base italic text-neutral-brown">i.</span>
+							<span>Tracked line and margin edits on up to 1,500 words of your opening chapter.</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<span aria-hidden="true" class="mt-0.5 font-serif text-base italic text-neutral-brown">ii.</span>
+							<span>A tailored 1-page editorial assessment covering hook, voice, and narrative momentum.</span>
+						</li>
+						<li class="flex items-start gap-3">
+							<span aria-hidden="true" class="mt-0.5 font-serif text-base italic text-neutral-brown">iii.</span>
+							<span>A transparent project quote, timeline, and recommended editing level within 48 hours.</span>
+						</li>
+					</ul>
+				</div>
+
+				<div class="mt-10 border-t border-neutral-brown/15 pt-6 text-xs leading-relaxed text-neutral-brown/70">
+					<strong class="font-semibold uppercase tracking-[0.12em] text-neutral-brown">
+						100% Author Confidentiality:
+					</strong>
+					Your pages remain strictly your intellectual property and are never shared, republished, or used to
+					train AI models.
 				</div>
 			</div>
-		</div>
-	</section>
+
+			<!-- Right Dedicated Lead Capture Form Embed Container -->
+			<div
+				data-reveal
+				style="--reveal-delay: 100ms"
+				class="bg-[#FFFDFD]/70 px-6 py-14 sm:px-12 sm:py-20 lg:col-span-7"
+			>
+				<div
+					id="chapter-review-embed"
+					data-form-embed="opening-chapter-review"
+					class="rounded-xs border border-neutral-brown/20 bg-pale-pink/45 p-6 sm:p-10"
+				>
+					<!-- Embed external CRM / form widget here (e.g., Tally, ConvertKit, Dubsado, Typeform) or use the native lead form below -->
+					<form id="opening-chapter-form" class="space-y-6">
+						<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+							<div>
+								<label
+									for="author-name"
+									class="block text-[11px] font-semibold uppercase tracking-[0.16em] text-neutral-brown"
+								>
+									Your Name <span aria-hidden="true">*</span>
+								</label>
+								<input
+									id="author-name"
+									name="name"
+									type="text"
+									required
+									autocomplete="name"
+									placeholder="Jane Doe"
+									class="mt-2 block w-full border-b border-neutral-brown/35 bg-transparent py-2.5 text-sm text-neutral-brown placeholder:text-neutral-brown/40 focus:border-neutral-brown focus:outline-none"
+								/>
+							</div>
+
+							<div>
+								<label
+									for="author-email"
+									class="block text-[11px] font-semibold uppercase tracking-[0.16em] text-neutral-brown"
+								>
+									Email Address <span aria-hidden="true">*</span>
+								</label>
+								<input
+									id="author-email"
+									name="email"
+									type="email"
+									required
+									autocomplete="email"
+									placeholder="jane@example.com"
+									class="mt-2 block w-full border-b border-neutral-brown/35 bg-transparent py-2.5 text-sm text-neutral-brown placeholder:text-neutral-brown/40 focus:border-neutral-brown focus:outline-none"
+								/>
+							</div>
+						</div>
+
+						<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+							<div>
+								<label
+									for="book-genre"
+									class="block text-[11px] font-semibold uppercase tracking-[0.16em] text-neutral-brown"
+								>
+									Genre / Category <span aria-hidden="true">*</span>
+								</label>
+								<select
+									id="book-genre"
+									name="genre"
+									required
+									class="mt-2 block w-full border-b border-neutral-brown/35 bg-pale-pink py-2.5 text-sm text-neutral-brown focus:border-neutral-brown focus:outline-none"
+								>
+									<option value="" disabled selected>Select your genre</option>
+									<option value="literary-fiction">Literary &amp; Upmarket Fiction</option>
+									<option value="commercial-fiction">Commercial / Book Club Fiction</option>
+									<option value="historical-speculative">Historical or Speculative Fiction</option>
+									<option value="memoir-nonfiction">Memoir &amp; Narrative Nonfiction</option>
+									<option value="other">Other</option>
+								</select>
+							</div>
+
+							<div>
+								<label
+									for="word-count"
+									class="block text-[11px] font-semibold uppercase tracking-[0.16em] text-neutral-brown"
+								>
+									Total Manuscript Word Count
+								</label>
+								<input
+									id="word-count"
+									name="wordCount"
+									type="text"
+									placeholder="e.g., 82,000 words"
+									class="mt-2 block w-full border-b border-neutral-brown/35 bg-transparent py-2.5 text-sm text-neutral-brown placeholder:text-neutral-brown/40 focus:border-neutral-brown focus:outline-none"
+								/>
+							</div>
+						</div>
+
+						<div>
+							<label
+								for="chapter-excerpt"
+								class="block text-[11px] font-semibold uppercase tracking-[0.16em] text-neutral-brown"
+							>
+								Opening Chapter Excerpt or Google Doc Link <span aria-hidden="true">*</span>
+							</label>
+							<textarea
+								id="chapter-excerpt"
+								name="excerpt"
+								rows="5"
+								required
+								placeholder="Paste your opening pages (up to 1,500 words) or share a view-only document link along with a brief synopsis..."
+								class="mt-2 block w-full rounded-xs border border-neutral-brown/25 bg-[#FFFDFD]/80 p-3.5 text-sm leading-relaxed text-neutral-brown placeholder:text-neutral-brown/40 focus:border-neutral-brown focus:outline-none"
+							></textarea>
+						</div>
+
+						<div class="pt-2">
+							<button
+								type="submit"
+								class="inline-flex w-full cursor-pointer items-center justify-center gap-3 rounded-xs border border-neutral-brown/25 bg-sage-green px-7 py-4 text-xs font-semibold uppercase tracking-[0.16em] text-neutral-brown transition duration-200 hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-brown"
+							>
+								<span>Book a Free Opening Chapter Review</span>
+								<span aria-hidden="true">&rarr;</span>
+							</button>
+							<p class="mt-3 text-center text-[11px] text-neutral-brown/65">
+								Personal response from Hannah within 2 business days &middot; No spam, ever.
+							</p>
+						</div>
+					</form>
+
+					<div
+						id="form-confirmation"
+						hidden
+						role="status"
+						aria-live="polite"
+						class="py-10 text-center"
+					>
+						<p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-brown/65">
+							Submission Received
+						</p>
+						<h3 class="mt-3 font-serif text-3xl text-neutral-brown">
+							Thank you for trusting me with your pages.
+						</h3>
+						<p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-neutral-brown/80">
+							Your opening chapter request has been logged. Keep an eye on your inbox&mdash;Hannah will
+							reply within 48 business hours with your tracked sample edit and editorial memo.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
 </Layout>
+
+<style>
+	.hero-logo {
+		width: 70%;
+		max-width: 400px;
+	}
+</style>
 
 <script is:inline>
 	(() => {

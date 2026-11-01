@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" fill="none">
+  <defs>
+    <radialGradient id="warmGlow" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#5E4B40" />
+      <stop offset="52%" stop-color="#3D3028" />
+      <stop offset="100%" stop-color="#241B16" />
+    </radialGradient>
+    <linearGradient id="pageSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBF4F5" stop-opacity="0.06" />
+      <stop offset="50%" stop-color="#FBF4F5" stop-opacity="0.01" />
+      <stop offset="100%" stop-color="#FBF4F5" stop-opacity="0.05" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#warmGlow)" />
+  <rect width="1600" height="900" fill="url(#pageSheen)" />
+
+  <!-- Subtle architectural folio lines -->
+  <line x1="220" y1="0" x2="220" y2="900" stroke="#FBF4F5" stroke-opacity="0.05" stroke-width="1" />
+  <line x1="1380" y1="0" x2="1380" y2="900" stroke="#FBF4F5" stroke-opacity="0.05" stroke-width="1" />
+  <line x1="0" y1="160" x2="1600" y2="160" stroke="#FBF4F5" stroke-opacity="0.04" stroke-width="1" />
+  <line x1="0" y1="740" x2="1600" y2="740" stroke="#FBF4F5" stroke-opacity="0.04" stroke-width="1" />
+
+  <!-- Soft open-manuscript arc -->
+  <path d="M160 860 Q480 690 800 810 Q1120 690 1440 860" stroke="#FBF4F5" stroke-opacity="0.07" stroke-width="1.5" />
+  <path d="M220 890 Q510 735 800 845 Q1090 735 1380 890" stroke="#FBF4F5" stroke-opacity="0.04" stroke-width="1" />
+</svg>
