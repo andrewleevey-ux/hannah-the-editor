@@ -1,35 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 108" fill="none" role="img" aria-labelledby="logoTitle">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 96" fill="none" role="img" aria-labelledby="logoTitle">
   <title id="logoTitle">Hannah the Editor</title>
-  <!-- Decorative top editorial rule -->
-  <line x1="64" y1="14" x2="178" y2="14" stroke="#8FA494" stroke-width="1.5" stroke-linecap="round" />
-  <!-- Proofreader's caret / nib emblem -->
-  <path d="M194 18 L200 8 L206 18" stroke="#8FA494" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-  <circle cx="200" cy="17" r="1.5" fill="#4A3B32" />
-  <line x1="222" y1="14" x2="336" y2="14" stroke="#8FA494" stroke-width="1.5" stroke-linecap="round" />
+  <!-- Fine editorial masthead rules in Neutral Brown -->
+  <line x1="24" y1="12" x2="376" y2="12" stroke="#4A3B32" stroke-opacity="0.28" stroke-width="1" />
 
-  <!-- Main Wordmark -->
+  <!-- Editorial Masthead Wordmark -->
   <text
     x="200"
-    y="62"
+    y="56"
     text-anchor="middle"
     fill="#4A3B32"
-    font-family="Georgia, 'Times New Roman', serif"
-    font-size="44"
-    font-weight="400"
-    letter-spacing="1.5"
-  >Hannah</text>
+    font-family="'Cormorant Garamond', Georgia, 'Times New Roman', serif"
+    font-size="46"
+    font-weight="500"
+    letter-spacing="3.5"
+  >HANNAH</text>
 
-  <!-- Tracked Subtitle with Sage Accents -->
-  <line x1="88" y1="87" x2="132" y2="87" stroke="#8FA494" stroke-width="1.25" stroke-linecap="round" />
+  <!-- Subtitle & Hairlines -->
+  <line x1="56" y1="78" x2="128" y2="78" stroke="#4A3B32" stroke-opacity="0.35" stroke-width="1" />
   <text
     x="200"
-    y="91"
+    y="82"
     text-anchor="middle"
     fill="#4A3B32"
-    font-family="ui-monospace, 'Courier New', monospace"
-    font-size="12.5"
+    font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif"
+    font-size="10.5"
     font-weight="600"
-    letter-spacing="4.5"
+    letter-spacing="4.2"
   >THE EDITOR</text>
-  <line x1="268" y1="87" x2="312" y2="87" stroke="#8FA494" stroke-width="1.25" stroke-linecap="round" />
+  <line x1="272" y1="78" x2="344" y2="78" stroke="#4A3B32" stroke-opacity="0.35" stroke-width="1" />
 </svg>
