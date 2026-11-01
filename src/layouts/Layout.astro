@@ -4,13 +4,11 @@ import '../styles/global.css';
 interface Props {
 	title?: string;
 	description?: string;
-	filename?: string;
 }
 
 const {
-	title = 'Hannah the Editor',
-	description = 'Thoughtful developmental editing, line editing, and proofreading.',
-	filename = 'hannah-the-editor.txt',
+	title = 'Hannah the Editor — Book Editing & Free Opening Chapter Review',
+	description = 'Sophisticated developmental and line editing for fiction and narrative nonfiction authors. Book a complimentary 1,500-word opening chapter review.',
 } = Astro.props;
 ---
 
@@ -24,69 +22,113 @@ const {
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 		<title>{title}</title>
+
+		<!-- Editorial Typography -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+			rel="stylesheet"
+		/>
+
+		<script is:inline>
+			if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+				document.documentElement.classList.add('js-ready');
+			}
+		</script>
 	</head>
-	<body class="min-h-screen bg-pale-pink text-neutral-brown font-serif py-6 px-4 sm:py-10 sm:px-6">
-		<div class="mx-auto max-w-3xl rounded-md border border-neutral-brown/25 bg-[#FFFDFA] shadow-[0_8px_28px_rgba(74,59,50,0.08)] overflow-hidden">
-			<!-- Notepad Title Bar -->
-			<div class="flex items-center justify-between bg-sage-green px-4 py-2 border-b border-neutral-brown/20 font-mono text-xs text-[#FFFDFA]">
-				<div class="flex items-center gap-2 tracking-wide">
-					<span aria-hidden="true" class="inline-block h-2.5 w-2.5 rounded-xs bg-pale-pink/90 border border-neutral-brown/20"></span>
-					<span>{filename} — Notepad</span>
-				</div>
-				<div class="flex items-center gap-2.5 select-none opacity-90" aria-hidden="true">
-					<span>&minus;</span>
-					<span>&#9633;</span>
-					<span>&times;</span>
-				</div>
+	<body class="min-h-screen bg-pale-pink text-neutral-brown font-sans selection:bg-neutral-brown/15">
+		<div class="mx-auto flex min-h-screen max-w-6xl flex-col border-x border-neutral-brown/15">
+			<!-- Top Editorial Utility & Navigation Bar -->
+			<div class="flex flex-wrap items-center justify-between gap-4 border-b border-neutral-brown/15 px-6 py-3.5 sm:px-10">
+				<span class="hidden text-[11px] uppercase tracking-[0.2em] text-neutral-brown/70 lg:inline-block">
+					Literary &amp; Commercial Manuscript Studio
+				</span>
+
+				<nav aria-label="Primary" class="flex items-center gap-6 text-xs uppercase tracking-[0.16em] text-neutral-brown/80">
+					<a href="#services" class="transition-colors hover:text-neutral-brown">Services</a>
+					<a href="#process" class="transition-colors hover:text-neutral-brown">Process</a>
+					<a href="#praise" class="transition-colors hover:text-neutral-brown">Praise</a>
+				</nav>
+
+				<a
+					href="#free-chapter-review"
+					class="inline-flex items-center gap-2 rounded-xs border border-neutral-brown/20 bg-sage-green px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-neutral-brown transition duration-200 hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-brown"
+				>
+					Free Chapter Review
+				</a>
 			</div>
 
-			<!-- Notepad Menu Bar -->
-			<nav
-				aria-label="Primary"
-				class="flex flex-wrap items-center gap-5 border-b border-sage-green/40 bg-pale-pink/75 px-4 py-1.5 font-mono text-xs text-neutral-brown"
-			>
-				<a href="/" class="hover:underline decoration-sage-green decoration-2 underline-offset-4">
-					<span class="underline">H</span>ome
-				</a>
-				<a href="#services" class="hover:underline decoration-sage-green decoration-2 underline-offset-4">
-					<span class="underline">S</span>ervices
-				</a>
-				<a href="#about" class="hover:underline decoration-sage-green decoration-2 underline-offset-4">
-					<span class="underline">A</span>bout
-				</a>
-				<a href="#contact" class="hover:underline decoration-sage-green decoration-2 underline-offset-4">
-					<span class="underline">C</span>ontact
-				</a>
-			</nav>
-
-			<!-- Main Header & Brand Logo -->
-			<header class="border-b border-sage-green/40 bg-[#FFFDFA] px-6 py-8 text-center">
+			<!-- Main Editorial Masthead & Brand Logo -->
+			<header class="border-b border-neutral-brown/15 px-6 py-8 text-center sm:px-10 sm:py-10">
 				<a href="/" class="block w-full" aria-label="Hannah the Editor — Home">
 					<img
 						src="/logo.svg"
 						alt="Hannah the Editor"
+						width="400"
+						height="96"
 						class="header-logo mx-auto block h-auto w-[70%] max-w-[400px]"
 					/>
 				</a>
 			</header>
 
-			<!-- Ruled Notepad Body -->
-			<main class="notepad-ruled relative min-h-[24rem] px-6 py-8 sm:px-12 sm:py-10">
-				<div
-					aria-hidden="true"
-					class="pointer-events-none absolute inset-y-0 left-8 hidden border-l border-sage-green/35 sm:block"
-				></div>
-				<div class="relative z-10 leading-8 sm:pl-4">
-					<slot />
-				</div>
+			<!-- Page Content -->
+			<main class="flex-1">
+				<slot />
 			</main>
 
-			<!-- Notepad Status Bar Footer -->
-			<footer class="flex flex-wrap items-center justify-between gap-2 border-t border-sage-green/40 bg-pale-pink/80 px-4 py-2 font-mono text-xs text-neutral-brown/80">
-				<span>Ln 1, Col 1 &nbsp;|&nbsp; UTF-8</span>
-				<span>&copy; {new Date().getFullYear()} Hannah the Editor</span>
+			<!-- Editorial Colophon Footer -->
+			<footer class="border-t border-neutral-brown/15 px-6 py-10 sm:px-10">
+				<div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-center">
+					<div>
+						<p class="font-serif text-xl font-medium tracking-wide text-neutral-brown">
+							Hannah the Editor
+						</p>
+						<p class="mt-1 text-xs text-neutral-brown/70">
+							Developmental editing, line editing, and submission consulting for authors.
+						</p>
+					</div>
+
+					<div class="flex flex-wrap items-center gap-6 text-xs uppercase tracking-[0.15em] text-neutral-brown/75">
+						<a href="#services" class="transition-colors hover:text-neutral-brown">Services</a>
+						<a href="#process" class="transition-colors hover:text-neutral-brown">Process</a>
+						<a href="#praise" class="transition-colors hover:text-neutral-brown">Praise</a>
+						<a href="#free-chapter-review" class="transition-colors hover:text-neutral-brown">
+							Free Review
+						</a>
+					</div>
+				</div>
+
+				<div class="mt-8 flex flex-col justify-between gap-2 border-t border-neutral-brown/15 pt-6 text-xs text-neutral-brown/65 sm:flex-row">
+					<span>&copy; {new Date().getFullYear()} Hannah the Editor. All rights reserved.</span>
+					<span>All submitted manuscripts are held under strict confidentiality.</span>
+				</div>
 			</footer>
 		</div>
+
+		<script is:inline>
+			(() => {
+				const items = document.querySelectorAll('[data-reveal]');
+				if (!items.length || !('IntersectionObserver' in window)) {
+					items.forEach((el) => el.classList.add('is-visible'));
+					return;
+				}
+
+				const observer = new IntersectionObserver(
+					(entries) => {
+						for (const entry of entries) {
+							if (entry.isIntersecting) {
+								entry.target.classList.add('is-visible');
+								observer.unobserve(entry.target);
+							}
+						}
+					},
+					{ rootMargin: '0px 0px -8% 0px', threshold: 0.08 }
+				);
+
+				items.forEach((el) => observer.observe(el));
+			})();
+		</script>
 	</body>
 </html>
 
