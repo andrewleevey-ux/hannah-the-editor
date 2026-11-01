@@ -7,7 +7,7 @@ interface Props {
 }
 
 const {
-	title = 'Hannah the Editor — Book Editing & Free Opening Chapter Review',
+	title = 'Hannah The Editor — Book Editing & Free Opening Chapter Review',
 	description = 'Sophisticated developmental and line editing for fiction and narrative nonfiction authors. Book a complimentary 1,500-word opening chapter review.',
 } = Astro.props;
 ---
@@ -37,10 +37,10 @@ const {
 			}
 		</script>
 	</head>
-	<body class="min-h-screen bg-pale-pink text-neutral-brown font-sans selection:bg-neutral-brown/15">
-		<div class="mx-auto flex min-h-screen max-w-6xl flex-col border-x border-neutral-brown/15">
-			<!-- Top Editorial Utility & Navigation Bar -->
-			<div class="flex flex-wrap items-center justify-between gap-4 border-b border-neutral-brown/15 px-6 py-3.5 sm:px-10">
+	<body class="flex min-h-screen flex-col bg-pale-pink font-sans text-neutral-brown selection:bg-neutral-brown/15">
+		<!-- Slim Editorial Navigation Bar -->
+		<header class="sticky top-0 z-30 w-full border-b border-neutral-brown/15 bg-pale-pink/95 backdrop-blur-sm">
+			<div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 border-x border-neutral-brown/15 px-6 py-3.5 sm:px-10">
 				<span class="hidden text-[11px] uppercase tracking-[0.2em] text-neutral-brown/70 lg:inline-block">
 					Literary &amp; Commercial Manuscript Studio
 				</span>
@@ -58,31 +58,20 @@ const {
 					Free Chapter Review
 				</a>
 			</div>
+		</header>
 
-			<!-- Main Editorial Masthead & Brand Logo -->
-			<header class="border-b border-neutral-brown/15 px-6 py-8 text-center sm:px-10 sm:py-10">
-				<a href="/" class="block w-full" aria-label="Hannah the Editor — Home">
-					<img
-						src="/logo.svg"
-						alt="Hannah the Editor"
-						width="400"
-						height="96"
-						class="header-logo mx-auto block h-auto w-[70%] max-w-[400px]"
-					/>
-				</a>
-			</header>
+		<!-- Full-Width Page Content -->
+		<main class="w-full flex-1">
+			<slot />
+		</main>
 
-			<!-- Page Content -->
-			<main class="flex-1">
-				<slot />
-			</main>
-
-			<!-- Editorial Colophon Footer -->
-			<footer class="border-t border-neutral-brown/15 px-6 py-10 sm:px-10">
+		<!-- Editorial Colophon Footer -->
+		<footer class="w-full border-t border-neutral-brown/15 bg-pale-pink">
+			<div class="mx-auto max-w-6xl border-x border-neutral-brown/15 px-6 py-10 sm:px-10">
 				<div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-center">
 					<div>
 						<p class="font-serif text-xl font-medium tracking-wide text-neutral-brown">
-							Hannah the Editor
+							Hannah The Editor
 						</p>
 						<p class="mt-1 text-xs text-neutral-brown/70">
 							Developmental editing, line editing, and submission consulting for authors.
@@ -100,11 +89,11 @@ const {
 				</div>
 
 				<div class="mt-8 flex flex-col justify-between gap-2 border-t border-neutral-brown/15 pt-6 text-xs text-neutral-brown/65 sm:flex-row">
-					<span>&copy; {new Date().getFullYear()} Hannah the Editor. All rights reserved.</span>
+					<span>&copy; {new Date().getFullYear()} Hannah The Editor. All rights reserved.</span>
 					<span>All submitted manuscripts are held under strict confidentiality.</span>
 				</div>
-			</footer>
-		</div>
+			</div>
+		</footer>
 
 		<script is:inline>
 			(() => {
@@ -131,10 +120,3 @@ const {
 		</script>
 	</body>
 </html>
-
-<style>
-	.header-logo {
-		width: 70%;
-		max-width: 400px;
-	}
-</style>
