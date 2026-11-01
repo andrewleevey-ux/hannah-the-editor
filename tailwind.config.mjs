@@ -4,9 +4,10 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				'pale-pink': '#FBF4F5',
-				'pastel-pink': '#E6C8CB',
-				'neutral-brown': '#4A3B32',
+				'brand-base': '#FBF4F5',
+				'brand-surface': '#FFF5F5',
+				'brand-ink': '#1F292E',
+				'brand-accent': '#E2B4BD',
 			},
 			fontFamily: {
 				serif: ['"Cormorant Garamond"', '"Georgia"', 'Cambria', '"Times New Roman"', 'Times', 'serif'],

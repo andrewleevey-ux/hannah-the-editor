@@ -4,7 +4,7 @@
 @layer base {
 	html {
 		background-color: #FBF4F5;
-		color: #4A3B32;
+		color: #1F292E;
 		scroll-behavior: smooth;
 	}
 
@@ -12,14 +12,14 @@
 		margin: 0;
 		min-height: 100vh;
 		background-color: #FBF4F5;
-		color: #4A3B32;
+		color: #1F292E;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
 
 	::selection {
-		background-color: rgba(74, 59, 50, 0.14);
-		color: #4A3B32;
+		background-color: rgba(226, 180, 189, 0.45);
+		color: #1F292E;
 	}
 }
 
