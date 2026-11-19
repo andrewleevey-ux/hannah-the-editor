@@ -6,14 +6,15 @@ import { siteContent } from '../data/content';
 <Layout title="Hannah The Editor — Thoughtful Manuscript Editing">
 	<!-- 1. Full-Bleed Hero Section with Gradient Scrim & Inline Trust Strip -->
 	<section class="relative flex min-h-[600px] items-center overflow-hidden bg-[#FFF5F5] py-20 lg:min-h-[680px] lg:py-28">
-		<!-- Full-Bleed Background Image Layer (Swap to <img src="/images/..." alt="..." class="absolute inset-0 h-full w-full object-cover object-right" /> when photo is added) -->
-		<div
-			role="img"
-			aria-label="Image Placeholder"
-			class="absolute inset-0 flex h-full w-full items-center justify-end bg-neutral-200 object-cover object-right pr-8 text-sm font-medium tracking-wide text-neutral-500 sm:pr-16 lg:pr-24"
-		>
-			<span>Image Placeholder</span>
-		</div>
+		<!-- Full-Bleed Background Image Layer -->
+		<img
+			src="/images/nong-9pw4TKvT3po-unsplash.jpg"
+			alt=""
+			aria-hidden="true"
+			fetchpriority="high"
+			decoding="async"
+			class="absolute inset-0 h-full w-full object-cover object-right"
+		/>
 
 		<!-- Responsive Contrast Scrim -->
 		<div
@@ -38,17 +39,8 @@ import { siteContent } from '../data/content';
 					))}
 				</div>
 
-				<div class="mt-8">
-					<a
-						href={siteContent.hero.primaryCta.href}
-						class="inline-flex w-full items-center justify-center rounded-full bg-brand-accent px-8 py-4 text-sm font-semibold text-[#4A4A4A] shadow-xs transition duration-200 hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4A4A4A] md:w-auto"
-					>
-						{siteContent.hero.primaryCta.label}
-					</a>
-				</div>
-
 				<!-- Inline Trust Strip -->
-				<ul class="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#4A4A4A]">
+				<ul class="mt-6 mb-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#4A4A4A]">
 					{siteContent.hero.conversionBar.highlights.map((highlight) => (
 						<li class="flex items-center gap-2 font-medium">
 							<svg
@@ -70,6 +62,15 @@ import { siteContent } from '../data/content';
 						</li>
 					))}
 				</ul>
+
+				<div>
+					<a
+						href={siteContent.hero.primaryCta.href}
+						class="inline-flex w-full items-center justify-center rounded-full bg-brand-accent px-8 py-4 text-sm font-semibold text-[#4A4A4A] shadow-xs transition duration-200 hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4A4A4A] md:w-auto"
+					>
+						{siteContent.hero.primaryCta.label}
+					</a>
+				</div>
 			</div>
 		</div>
 	</section>
