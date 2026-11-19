@@ -47,7 +47,7 @@ html.js-ready [data-reveal].is-visible {
 
 @media (prefers-reduced-motion: reduce) {
 	html {
-		scroll-behavior: auto;
+		scroll-behavior: auto !important;
 	}
 
 	html.js-ready [data-reveal] {
@@ -55,4 +55,68 @@ html.js-ready [data-reveal].is-visible {
 		transform: none;
 		transition: none;
 	}
+}
+
+/* Testimonials Carousel: native scroll-snap track with continuous CSS order looping */
+.testimonial-track {
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	overscroll-behavior-x: contain;
+	touch-action: manipulation;
+	scrollbar-width: none;
+}
+
+.testimonial-track::-webkit-scrollbar {
+	display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.testimonial-track {
+		scroll-behavior: smooth;
+	}
+}
+
+.testimonial-track > [role="group"] {
+	flex: 0 0 100%;
+	scroll-snap-align: center;
+	scroll-snap-stop: always;
+}
+
+/* Park end slides via CSS order without cloning DOM nodes */
+.testimonial-track > :first-child {
+	order: clamp(0, var(--current) - (var(--children-count, sibling-count()) - 3), 1);
+}
+
+.testimonial-track > :last-child {
+	order: calc(-1 * clamp(0, 2 - var(--current), 1));
+}
+
+/* FAQ Accordion: native details/summary disclosure with progressive height animation */
+.faq-item > summary::-webkit-details-marker {
+	display: none;
+}
+
+.faq-item::details-content {
+	interpolate-size: allow-keywords;
+	overflow: clip;
+	contain: layout;
+}
+
+.faq-item:not([open])::details-content {
+	block-size: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.faq-item::details-content {
+		transition: block-size, content-visibility, display;
+		transition-duration: 0.28s;
+		transition-timing-function: ease-in-out;
+		transition-behavior: allow-discrete;
+	}
+}
+
+/* Waitlist form validation after user interaction */
+.waitlist-input:user-invalid {
+	border-color: #9f1239;
 }
