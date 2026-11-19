@@ -66,7 +66,7 @@ import { siteContent } from '../data/content';
 				<div>
 					<a
 						href={siteContent.hero.primaryCta.href}
-						class="inline-flex w-full items-center justify-center rounded-full bg-brand-accent px-8 py-4 text-sm font-semibold text-[#4A4A4A] shadow-xs transition duration-200 hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4A4A4A] md:w-auto"
+						class="inline-flex w-full items-center justify-center rounded-full bg-[#2B3A4A] px-8 py-4 text-sm font-semibold text-white shadow-xs transition duration-200 hover:bg-[#1F2B38] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2B3A4A] focus-visible:ring-offset-2 md:w-auto"
 					>
 						{siteContent.hero.primaryCta.label}
 					</a>
@@ -75,7 +75,7 @@ import { siteContent } from '../data/content';
 		</div>
 	</section>
 
-	<!-- 2. Editing Services (Background: bg-white, Cards: bg-[#FFF5F5]) -->
+	<!-- 2. Editing Services (Background: bg-white, Cards: bg-brand-surface #FCE8EC) -->
 	<section id="services" class="scroll-mt-16 border-t border-[#4A4A4A]/10 bg-white py-24 lg:py-32">
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 			<div data-reveal class="mx-auto max-w-2xl text-center">
@@ -105,7 +105,7 @@ import { siteContent } from '../data/content';
 					<div class="shrink-0">
 						<a
 							href={siteContent.services.featured.cta.href}
-							class="inline-flex w-full items-center justify-center rounded-full bg-brand-accent px-7 py-3.5 text-sm font-semibold text-brand-ink shadow-xs transition duration-200 hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-ink md:w-auto"
+							class="inline-flex w-full items-center justify-center rounded-full bg-[#2B3A4A] px-7 py-3.5 text-sm font-semibold text-white shadow-xs transition duration-200 hover:bg-[#1F2B38] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2B3A4A] focus-visible:ring-offset-2 md:w-auto"
 						>
 							{siteContent.services.featured.cta.label}
 						</a>
@@ -161,8 +161,8 @@ import { siteContent } from '../data/content';
 		</div>
 	</section>
 
-	<!-- 3. How My Editing Process Works (Background: bg-[#F7D6D0]) -->
-	<section id="process" class="scroll-mt-16 border-y border-[#4A4A4A]/10 bg-[#F7D6D0] py-24 lg:py-32">
+	<!-- 3. How My Editing Process Works (Background: bg-[#FCE8EC]) -->
+	<section id="process" class="scroll-mt-16 border-y border-[#4A4A4A]/10 bg-[#FCE8EC] py-24 lg:py-32">
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 			<div data-reveal class="mx-auto max-w-3xl text-center">
 				<h2 class="font-sans text-3xl font-medium leading-tight text-brand-ink sm:text-4xl lg:text-5xl">
@@ -275,7 +275,7 @@ import { siteContent } from '../data/content';
 									aria-hidden="true"
 									class={
 										isReversed
-											? 'absolute right-0 bottom-0 h-[88%] w-[88%] rounded-3xl bg-[#F7D6D0]/70'
+											? 'absolute right-0 bottom-0 h-[88%] w-[88%] rounded-3xl bg-[#FCE8EC]/70'
 											: 'absolute bottom-0 left-0 h-[88%] w-[88%] rounded-3xl bg-[#FFF5F5]'
 									}
 								></div>
@@ -298,7 +298,7 @@ import { siteContent } from '../data/content';
 								<div class="mt-8">
 									<a
 										href={item.ctaHref}
-										class="inline-flex w-full items-center justify-center rounded-full bg-brand-accent px-7 py-3.5 text-sm font-semibold text-brand-ink shadow-xs transition duration-200 hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-ink md:w-auto"
+										class="inline-flex w-full items-center justify-center rounded-full bg-[#2B3A4A] px-7 py-3.5 text-sm font-semibold text-white shadow-xs transition duration-200 hover:bg-[#1F2B38] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2B3A4A] focus-visible:ring-offset-2 md:w-auto"
 									>
 										{item.ctaLabel}
 									</a>
@@ -311,12 +311,12 @@ import { siteContent } from '../data/content';
 		</div>
 	</section>
 
-	<!-- 6. Testimonials Carousel (Background: bg-[#F7D6D0]) -->
+	<!-- 6. Testimonials Carousel (Background: bg-[#FCE8EC]) -->
 	<section
 		id="reviews"
 		aria-roledescription="carousel"
 		aria-labelledby="testimonials-heading"
-		class="scroll-mt-16 bg-[#F7D6D0] py-24 lg:py-32"
+		class="scroll-mt-16 bg-[#FCE8EC] py-24 lg:py-32"
 	>
 		<div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
 			<div data-reveal class="text-center">
@@ -492,7 +492,7 @@ import { siteContent } from '../data/content';
 			<div data-reveal class="mt-12 text-center">
 				<a
 					href={siteContent.faqs.cta.href}
-					class="inline-flex w-full items-center justify-center rounded-full bg-brand-accent px-8 py-4 text-sm font-semibold text-[#4A4A4A] shadow-xs transition duration-200 hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4A4A4A] md:w-auto"
+					class="inline-flex w-full items-center justify-center rounded-full bg-[#2B3A4A] px-8 py-4 text-sm font-semibold text-white shadow-xs transition duration-200 hover:bg-[#1F2B38] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2B3A4A] focus-visible:ring-offset-2 md:w-auto"
 				>
 					{siteContent.faqs.cta.label}
 				</a>
@@ -549,7 +549,7 @@ import { siteContent } from '../data/content';
 							<button
 								id="waitlist-submit"
 								type="submit"
-								class="inline-flex min-h-12 w-full shrink-0 cursor-pointer items-center justify-center rounded-full bg-brand-accent px-8 py-3.5 text-sm font-semibold text-[#4A4A4A] shadow-xs transition duration-200 hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4A4A4A] md:w-auto"
+								class="inline-flex min-h-12 w-full shrink-0 cursor-pointer items-center justify-center rounded-full bg-[#2B3A4A] px-8 py-3.5 text-sm font-semibold text-white shadow-xs transition duration-200 hover:bg-[#1F2B38] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2B3A4A] focus-visible:ring-offset-2 md:w-auto"
 							>
 								{siteContent.waitlist.buttonLabel}
 							</button>
