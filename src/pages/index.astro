@@ -4,56 +4,57 @@ import { siteContent } from '../data/content';
 ---
 
 <Layout title="Hannah The Editor — Thoughtful Manuscript Editing">
-	<!-- 1. Hero & Overlapping Conversion Bar (Background: brand-base) -->
-	<section class="bg-brand-base pt-24 pb-28 lg:pt-32 lg:pb-36">
-		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-			<div class="grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-16">
-				<!-- Left Column: Eyebrow, Headline, Intro Paragraphs -->
-				<div>
-					<p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-ink/70">
-						{siteContent.hero.eyebrow}
-					</p>
-
-					<h1 class="mt-4 font-sans text-[48px] font-medium leading-[1.12] text-brand-ink">
-						{siteContent.hero.headline}
-					</h1>
-
-					<div class="mt-6 max-w-xl space-y-4 text-base leading-relaxed text-brand-ink/80 sm:text-lg">
-						{siteContent.hero.paragraphs.map((paragraph) => (
-							<p>{paragraph}</p>
-						))}
-					</div>
-				</div>
-
-				<!-- Right Column: Large, Organic-Looking Image Placeholder -->
-				<div class="relative mx-auto w-full max-w-lg md:max-w-none">
-					<div
-						aria-hidden="true"
-						class="absolute -inset-3 rounded-[4rem_6rem_3.5rem_5.5rem] bg-brand-surface"
-					></div>
-					<div
-						role="img"
-						aria-label="Image Placeholder"
-						class="relative flex aspect-[4/4.3] w-full items-center justify-center rounded-[3.5rem_6rem_3rem_5.5rem] bg-neutral-200 text-sm font-medium tracking-wide text-neutral-500 shadow-xs"
-					>
-						Image Placeholder
-					</div>
-				</div>
-			</div>
+	<!-- 1. Full-Bleed Hero Section with Gradient Scrim & Inline Trust Strip -->
+	<section class="relative flex min-h-[600px] items-center overflow-hidden bg-[#FFF5F5] py-20 lg:min-h-[680px] lg:py-28">
+		<!-- Full-Bleed Background Image Layer (Swap to <img src="/images/..." alt="..." class="absolute inset-0 h-full w-full object-cover object-right" /> when photo is added) -->
+		<div
+			role="img"
+			aria-label="Image Placeholder"
+			class="absolute inset-0 flex h-full w-full items-center justify-end bg-neutral-200 object-cover object-right pr-8 text-sm font-medium tracking-wide text-neutral-500 sm:pr-16 lg:pr-24"
+		>
+			<span>Image Placeholder</span>
 		</div>
-	</section>
 
-	<!-- Overlapping Horizontal Conversion Bar -->
-	<div class="relative z-10 -my-12 px-4 sm:px-6 lg:px-8">
-		<div class="mx-auto max-w-6xl rounded-3xl border border-brand-ink/10 bg-[#F7D6D0] px-6 py-6 shadow-md sm:px-8 sm:py-7 lg:px-10">
-			<div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-				<ul class="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-8 sm:gap-y-3">
+		<!-- Responsive Contrast Scrim -->
+		<div
+			aria-hidden="true"
+			class="pointer-events-none absolute inset-0 bg-[#FFF5F5]/90 md:bg-transparent md:bg-gradient-to-r md:from-[#FFF5F5] md:via-[#FFF5F5]/90 md:to-transparent"
+		></div>
+
+		<!-- Left-Aligned Conversion Stack -->
+		<div class="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+			<div class="max-w-2xl">
+				<p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#4A4A4A]/80">
+					{siteContent.hero.eyebrow}
+				</p>
+
+				<h1 class="mt-4 font-sans text-[48px] font-medium leading-[1.12] text-[#4A4A4A]">
+					{siteContent.hero.headline}
+				</h1>
+
+				<div class="mt-6 max-w-xl space-y-4 text-base leading-relaxed text-[#4A4A4A] sm:text-lg">
+					{siteContent.hero.paragraphs.map((paragraph) => (
+						<p>{paragraph}</p>
+					))}
+				</div>
+
+				<div class="mt-8">
+					<a
+						href={siteContent.hero.primaryCta.href}
+						class="inline-flex w-full items-center justify-center rounded-full bg-brand-accent px-8 py-4 text-sm font-semibold text-[#4A4A4A] shadow-xs transition duration-200 hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4A4A4A] md:w-auto"
+					>
+						{siteContent.hero.primaryCta.label}
+					</a>
+				</div>
+
+				<!-- Inline Trust Strip -->
+				<ul class="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#4A4A4A]">
 					{siteContent.hero.conversionBar.highlights.map((highlight) => (
-						<li class="flex items-center gap-2.5 text-sm font-semibold text-brand-ink sm:text-base">
+						<li class="flex items-center gap-2 font-medium">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
-								width="18"
-								height="18"
+								width="16"
+								height="16"
 								viewBox="0 0 24 24"
 								fill="none"
 								stroke="currentColor"
@@ -61,7 +62,7 @@ import { siteContent } from '../data/content';
 								stroke-linecap="round"
 								stroke-linejoin="round"
 								aria-hidden="true"
-								class="h-4 w-4 shrink-0 text-brand-ink"
+								class="lucide lucide-check h-4 w-4 shrink-0 text-[#4A4A4A]"
 							>
 								<path d="M20 6 9 17l-5-5"></path>
 							</svg>
@@ -69,19 +70,12 @@ import { siteContent } from '../data/content';
 						</li>
 					))}
 				</ul>
-
-				<a
-					href={siteContent.hero.conversionBar.cta.href}
-					class="inline-flex w-full shrink-0 items-center justify-center rounded-full border border-brand-ink/15 bg-brand-accent px-8 py-3.5 text-sm font-semibold text-brand-ink shadow-xs transition duration-200 hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-ink md:w-auto"
-				>
-					{siteContent.hero.conversionBar.cta.label}
-				</a>
 			</div>
 		</div>
-	</div>
+	</section>
 
 	<!-- 2. Editing Services (Canvas: brand-base, Cards: brand-surface) -->
-	<section id="services" class="scroll-mt-16 border-t border-brand-ink/10 bg-brand-base pt-28 pb-24 lg:pt-36 lg:pb-32">
+	<section id="services" class="scroll-mt-16 border-t border-brand-ink/10 bg-brand-base py-24 lg:py-32">
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 			<div data-reveal class="mx-auto max-w-2xl text-center">
 				<h2 class="font-sans text-3xl font-medium text-brand-ink sm:text-4xl lg:text-5xl">
