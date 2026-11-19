@@ -5,7 +5,7 @@ export default {
 		extend: {
 			colors: {
 				'brand-base': '#FBF4F5',
-				'brand-surface': '#FFF5F5',
+				'brand-surface': '#FCE8EC',
 				'brand-ink': '#1F292E',
 				'brand-accent': '#E2B4BD',
 			},
