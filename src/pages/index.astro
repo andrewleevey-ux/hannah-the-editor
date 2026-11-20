@@ -5,7 +5,7 @@ import { siteContent } from '../data/content';
 
 <Layout title="Hannah The Editor — Thoughtful Manuscript Editing">
 	<!-- 1. Full-Bleed Hero Section with Gradient Scrim & Inline Trust Strip -->
-	<section class="relative flex min-h-[600px] items-center overflow-hidden bg-[#FFF5F5] py-20 lg:min-h-[680px] lg:py-28">
+	<section class="relative flex min-h-[600px] items-center overflow-hidden bg-[#FFF5F5] pt-20 pb-12 lg:min-h-[680px] lg:pt-28 lg:pb-16">
 		<!-- Full-Bleed Background Image Layer -->
 		<img
 			src="/images/nong-9pw4TKvT3po-unsplash.jpg"
@@ -23,7 +23,7 @@ import { siteContent } from '../data/content';
 		></div>
 
 		<!-- Left-Aligned Conversion Stack -->
-		<div class="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+		<div class="relative z-10 mx-auto w-full max-w-7xl px-4 pb-24 sm:px-6 md:pb-32 lg:px-8">
 			<div class="max-w-2xl">
 				<p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#4A4A4A]/80">
 					{siteContent.hero.eyebrow}
@@ -73,10 +73,29 @@ import { siteContent } from '../data/content';
 				</div>
 			</div>
 		</div>
+
+		<!-- Organic Bottom Wave Divider -->
+		<div
+			aria-hidden="true"
+			class="pointer-events-none absolute bottom-0 left-0 right-0 z-20 -mb-px w-full overflow-hidden leading-none"
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 1440 120"
+				preserveAspectRatio="none"
+				focusable="false"
+				class="relative block h-[48px] w-full md:h-[80px] lg:h-[100px]"
+			>
+				<path
+					d="M0,40 C320,120 680,0 1080,70 C1260,100 1380,80 1440,55 L1440,120 L0,120 Z"
+					class="fill-[#FFFFFF]"
+				></path>
+			</svg>
+		</div>
 	</section>
 
 	<!-- 2. Editing Services (Background: bg-white, Cards: bg-brand-surface #FCE8EC) -->
-	<section id="services" class="scroll-mt-16 border-t border-[#4A4A4A]/10 bg-white py-24 lg:py-32">
+	<section id="services" class="scroll-mt-16 bg-white py-24 lg:py-32">
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 			<div data-reveal class="mx-auto max-w-2xl text-center">
 				<h2 class="font-sans text-3xl font-medium text-brand-ink sm:text-4xl lg:text-5xl">
